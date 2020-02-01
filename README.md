@@ -1,24 +1,9 @@
-# minimal-productivity-apps
+deploy app to github pages:
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. build project with vue ui
+2. cd dist
+3. git init
+4. git add .
+5. git commit -m "Deploying app"
+6. git checkout -b gh-pages
+7. git push -f https://github.com/SaConway/minimal-productivity-apps.git gh-pages
