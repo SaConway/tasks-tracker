@@ -1,0 +1,155 @@
+<template>
+  <div class="container">
+    <textarea
+      placeholder="enter a new note.."
+      v-model="note"
+      ref="notetexterea"
+      @keyup.ctrl.enter="addNote"
+      v-autoresize
+      class="new-note"
+    ></textarea>
+
+    <button @click="addNote" class="add-note">
+      <img src="@/assets/plus.svg" class="icon" />
+    </button>
+
+    <div class="notes">
+      <div v-for="(note, index) in notes" :key="note.date" class="note">
+        <button @click="deleteNote(index)" class="delete-note">
+          <img src="@/assets/remove.svg" class="icon" />
+        </button>
+        <textarea v-model="note.text" v-autoresize></textarea>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      note: "",
+      notes: JSON.parse(localStorage.getItem("notes")) || []
+    };
+  },
+  mounted() {
+    this.$refs.notetexterea.focus();
+  },
+  methods: {
+    addNote() {
+      if (this.note != "") {
+        this.notes.push({ text: this.note, date: new Date().getTime() });
+        this.note = "";
+      }
+    },
+    deleteNote(index) {
+      window.Vue.delete(this.notes, index);
+    }
+  },
+  watch: {
+    notes: {
+      handler: function(val) {
+        localStorage.setItem("notes", JSON.stringify(val));
+      },
+      deep: true
+    }
+  },
+  directives: {
+    autoresize: {
+      inserted: function(el) {
+        el.style.height = el.scrollHeight + "px";
+
+        function OnInput() {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+        }
+
+        el.addEventListener("keyup", OnInput);
+        el.addEventListener("change", OnInput);
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+button {
+  cursor: pointer;
+}
+
+textarea {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  resize: none;
+  font-size: var(--normal-font-size);
+}
+
+textarea.new-note {
+  width: 30rem;
+  border: none;
+  background-color: var(--accent-color);
+  vertical-align: middle;
+  margin: 3rem 0 1rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button.add-note {
+  position: relative;
+  top: 1.7rem;
+  left: 1rem;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+button.delete-note {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+}
+
+.notes {
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  max-height: calc(100vh - 16rem);
+}
+
+.note {
+  width: 15rem;
+  margin: 2rem 2rem 0 0;
+  color: var(--accent-color);
+  position: relative;
+  animation: fade-in 0.5s ease-in;
+}
+
+.note textarea {
+  background-color: transparent;
+  color: var(--accent-color);
+  width: 100%;
+  padding: 2.5rem 1rem;
+  overflow-y: hidden;
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+}
+
+.add-note .icon {
+  height: 30px;
+  width: 30px;
+}
+
+.delete-note .icon {
+  height: 25px;
+  width: 25px;
+}
+</style>
