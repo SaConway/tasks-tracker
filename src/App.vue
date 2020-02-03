@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/timer">Timer</router-link>
-      <router-link to="/tasks-tracker">Tasks Tracker</router-link>
-      <router-link to="/notes">Notes</router-link>
+      <router-link class="link" to="/timer">Timer</router-link>
+      <router-link class="link" to="/tasks-tracker">Tasks Tracker</router-link>
+      <router-link class="link" to="/notes">Notes</router-link>
     </div>
     <keep-alive>
       <router-view />

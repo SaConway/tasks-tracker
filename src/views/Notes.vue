@@ -89,7 +89,7 @@ textarea.new-note {
   border: none;
   background-color: var(--accent-color);
   vertical-align: middle;
-  margin: 3rem 0 1rem;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -99,8 +99,8 @@ button {
 
 button.add-note {
   position: relative;
-  top: 1.7rem;
-  left: 1rem;
+  top: 0.5rem;
+  left: 0.8rem;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -144,8 +144,8 @@ button.delete-note {
 }
 
 .add-note .icon {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 .delete-note .icon {

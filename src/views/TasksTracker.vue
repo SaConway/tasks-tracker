@@ -18,17 +18,8 @@
       <div v-for="date in filterUniqueDates(tasks)" :key="date">
         <p class="date">{{ date }}</p>
 
-        <div
-          v-for="task in filterTasksOfDate(date)"
-          class="task"
-          :key="date + task.date"
-        >
-          <input
-            type="checkbox"
-            v-model="task.done"
-            tabindex="0"
-            @change="doneTask(task.date)"
-          />
+        <div v-for="task in filterTasksOfDate(date)" class="task" :key="date + task.date">
+          <input type="checkbox" v-model="task.done" tabindex="0" @change="doneTask(task.date)" />
           <div class="checkbox-custom"></div>
 
           <input type="text" v-model="task.text" v-autoresize />
@@ -195,8 +186,8 @@ button.add-task {
   width: 40px;
   height: 40px;
   position: relative;
-  top: 15px;
-  left: 10px;
+  top: 0;
+  left: 0.8rem;
   overflow: hidden;
 }
 
@@ -228,7 +219,7 @@ input[type="text"] {
   background-color: var(--accent-color);
   vertical-align: middle;
   width: 20rem;
-  margin: 3rem 0;
+  margin-bottom: 2rem;
 }
 
 .tasks {
@@ -253,10 +244,6 @@ input[type="text"] {
 
 p.date {
   margin: 2rem auto;
-}
-
-p.date:first-of-type {
-  margin-top: 0;
 }
 
 /* Checkbox */
