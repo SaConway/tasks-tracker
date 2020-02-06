@@ -44,44 +44,18 @@ html {
 
 #app {
   display: flex;
-  opacity: 0;
-  animation: fade-in 0.5s 0.2s ease-in;
-  animation-fill-mode: forwards;
   height: 100vh;
-}
-
-#nav {
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  background-color: var(--accent-color);
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  height: fit-content;
-}
-
-#nav a {
-  font-weight: bold;
-  text-decoration: none;
-  margin: 1rem 0;
-  color: var(--secondary-color);
-}
-
-#nav a.router-link-exact-active {
-  color: var(--primary-color);
 }
 
 .container {
   flex: 1;
   padding: 5rem;
+  opacity: 0;
+  animation: 1.5s fade-in ease-in-out forwards;
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 1;
   }
 }

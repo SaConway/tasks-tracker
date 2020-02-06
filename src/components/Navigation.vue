@@ -36,6 +36,7 @@ export default {};
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--accent-color);
+  overflow-x: hidden;
 }
 
 .link {
@@ -48,6 +49,19 @@ export default {};
   height: 5rem;
   margin: 0.8rem 0.3rem;
   border: none;
+  transform: translateX(-100%);
+}
+
+.link:nth-of-type(1) {
+  animation: 1s slide-in ease-in-out forwards;
+}
+
+.link:nth-of-type(2) {
+  animation: 1s slide-in 0.3s ease-in-out forwards;
+}
+
+.link:nth-of-type(3) {
+  animation: 1s slide-in 0.6s ease-in-out forwards;
 }
 
 svg {
@@ -70,5 +84,11 @@ h3 {
 
 .nav a.router-link-exact-active svg {
   fill: var(--primary-color);
+}
+
+@keyframes slide-in {
+  to {
+    transform: translateX(0);
+  }
 }
 </style>
