@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link class="link" to="/timer">Timer</router-link>
       <router-link class="link" to="/tasks-tracker">Tasks Tracker</router-link>
       <router-link class="link" to="/notes">Notes</router-link>
-    </div>
+    </div> -->
     <keep-alive>
       <router-view />
     </keep-alive>
