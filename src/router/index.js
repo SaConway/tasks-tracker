@@ -1,21 +1,21 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import TasksTracker from "../views/TasksTracker.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    component: Home
+    redirect: "/tasks-tracker"
+  },
+  {
+    path: "/tasks-tracker",
+    component: TasksTracker
   },
   {
     path: "/timer",
     component: () => import("../views/Timer.vue")
-  },
-  {
-    path: "/tasks-tracker",
-    component: () => import("../views/TasksTracker.vue")
   },
   {
     path: "/notes",

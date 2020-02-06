@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link class="link" to="/timer">Timer</router-link>
-      <router-link class="link" to="/tasks-tracker">Tasks Tracker</router-link>
-      <router-link class="link" to="/notes">Notes</router-link>
-    </div> -->
+    <navigation></navigation>
     <keep-alive>
       <router-view />
     </keep-alive>
   </div>
 </template>
+
+<script>
+import Navigation from "./components/Navigation";
+
+export default {
+  components: {
+    Navigation
+  }
+};
+</script>
 
 <style>
 :root {
@@ -68,9 +74,7 @@ html {
 
 .container {
   flex: 1;
-  /* align-self: center; */
-  /* text-align: center; */
-  padding: 4rem 7rem;
+  padding: 5rem;
 }
 
 @keyframes fade-in {
