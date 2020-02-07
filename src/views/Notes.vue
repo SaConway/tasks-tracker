@@ -102,8 +102,8 @@ button.add-note {
   top: 0.5rem;
   left: 0.8rem;
   padding: 0;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 button.delete-note {

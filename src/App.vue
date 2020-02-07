@@ -39,7 +39,7 @@ html {
 }
 
 :focus {
-  outline: var(--primary-color) auto 1px;
+  outline: 1px solid var(--primary-color);
 }
 
 #app {
