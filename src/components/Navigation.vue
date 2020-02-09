@@ -50,6 +50,12 @@
   flex-direction: column;
   border-right: 1px solid var(--accent-color);
   overflow-x: hidden;
+  width: 115px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
 }
 
 .link {

@@ -43,13 +43,11 @@ html {
 }
 
 #app {
-  display: flex;
   height: 100vh;
 }
 
 .container {
-  flex: 1;
-  padding: 5rem;
+  padding: 5rem 5rem 5rem 13rem;
   opacity: 0;
   animation: 1.5s fade-in ease-in-out forwards;
 }
