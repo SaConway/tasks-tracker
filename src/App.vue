@@ -47,7 +47,7 @@ html {
 }
 
 .container {
-  padding: 5rem 5rem 5rem 13rem;
+  padding: 3rem 3rem 3rem 11rem;
   opacity: 0;
   animation: 1.5s fade-in ease-in-out forwards;
 }

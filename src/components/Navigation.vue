@@ -56,6 +56,7 @@
   left: 0;
   height: 100%;
   z-index: 2;
+  padding-top: 1.3rem;
 }
 
 .link {
