@@ -25,7 +25,11 @@
           <input type="text" v-model="task.text" v-autoresize />
           <span class="task-time">[{{ getTimeDetails(task.date) }}]</span>
           <button @click="deleteTask(task.date)" class="delete-task">
-            <img src="@/assets/delete.svg" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M9 19c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5-17v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712zm-3 4v16h-14v-16h-2v18h18v-18h-2z"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -204,8 +208,14 @@ button.delete-task {
   margin-left: 10px;
 }
 
-button.delete-task img {
+button.delete-task svg {
   vertical-align: middle;
+  fill: var(--accent-color);
+  transition: 0.3s transform ease-in-out;
+}
+
+button.delete-task:hover svg {
+  transform: scale(1.25, 1.25);
 }
 
 input[type="text"] {
