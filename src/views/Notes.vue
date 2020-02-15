@@ -14,7 +14,11 @@
     <div class="notes">
       <div v-for="(note, index) in notes" :key="note.date" class="note">
         <button @click="deleteNote(index)" class="delete-note">
-          <img src="@/assets/remove.svg" class="icon" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+            />
+          </svg>
         </button>
         <textarea v-model="note.text" v-autoresize></textarea>
       </div>
@@ -88,7 +92,7 @@ textarea.new-note {
 button.delete-note {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 2px;
   width: 25px;
   height: 25px;
   padding: 0;
@@ -123,13 +127,14 @@ button.delete-note {
   border-radius: var(--border-radius);
 }
 
-.add-note .icon {
-  height: 40px;
-  width: 40px;
+.delete-note svg {
+  height: 15px;
+  width: 15px;
+  fill: var(--accent-color);
+  transition: 0.3s transform ease-in-out;
 }
 
-.delete-note .icon {
-  height: 25px;
-  width: 25px;
+.delete-note:hover svg {
+  transform: scale(1.05, 1.05);
 }
 </style>

@@ -204,11 +204,10 @@ input[type="text"] {
   border: none;
   background-color: var(--accent-color);
   width: 20rem;
-  margin-bottom: 2rem;
 }
 
 .tasks {
-  margin-top: 0;
+  margin-top: 3rem;
   color: var(--accent-color);
 }
 
