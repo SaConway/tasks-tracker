@@ -10,9 +10,7 @@
       v-autoresize
     />
 
-    <button @click="addTask" class="add-task">
-      <img src="@/assets/plus.svg" />
-    </button>
+    <button @click="addTask" class="add-btn" v-bind:class="{ visible: task.length > 0 }">add</button>
 
     <div class="tasks">
       <div v-for="date in filterUniqueDates(tasks)" :key="date">
@@ -178,28 +176,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  cursor: pointer;
-  background-color: transparent;
-}
-
-button.add-task {
-  border: none;
-  padding: 0;
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  top: 0;
-  left: 0.8rem;
-  overflow: hidden;
-}
-
-button.add-task img {
-  width: 40px;
-  height: 40px;
-}
-
 button.delete-task {
   width: 35px;
   border: none;
@@ -227,7 +203,6 @@ input[type="text"] {
 .new-task {
   border: none;
   background-color: var(--accent-color);
-  vertical-align: middle;
   width: 20rem;
   margin-bottom: 2rem;
 }
@@ -253,7 +228,7 @@ input[type="text"] {
 }
 
 p.date {
-  margin: 2rem auto;
+  margin: 2rem auto 1rem;
 }
 
 /* Checkbox */

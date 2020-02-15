@@ -2,14 +2,7 @@
   <div class="container">
     <button v-if="status != 'off'" @click="stopTimer">Stop</button>
 
-    <button
-      v-if="status == 'on'"
-      @click="pauseTimer"
-      class="pause-timer"
-      key="pause-btn"
-    >
-      Pause
-    </button>
+    <button v-if="status == 'on'" @click="pauseTimer" class="pause-timer" key="pause-btn">Pause</button>
     <button v-else-if="status == 'pause'" @click="resumeTimer">Resume</button>
 
     <template v-if="status == 'off'">
@@ -23,17 +16,10 @@
       />
       <span class="time-period">h</span>
 
-      <input
-        v-model="minutes"
-        maxlength="2"
-        @input="periodChange"
-        @keyup.enter="startTimer"
-      />
+      <input v-model="minutes" maxlength="2" @input="periodChange" @keyup.enter="startTimer" />
       <span class="time-period">m</span>
 
-      <button @click="startTimer" class="start-timer" key="start-btn">
-        Start
-      </button>
+      <button @click="startTimer" class="start-timer" key="start-btn">Start</button>
     </template>
 
     <template v-if="countdown != null">
@@ -146,7 +132,6 @@ export default {
 
 <style scoped>
 button {
-  background-color: transparent;
   color: var(--accent-color);
   width: 7rem;
   margin-right: 1rem;
@@ -154,7 +139,6 @@ button {
   font-size: var(--normal-font-size);
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
-  cursor: pointer;
 }
 
 input {
@@ -212,9 +196,6 @@ span.time-period:last-of-type {
   .progress {
     width: 80%;
   }
-}
-
-@media (max-width: 1000px) {
   button.start-timer {
     display: block;
     margin-top: 2rem;

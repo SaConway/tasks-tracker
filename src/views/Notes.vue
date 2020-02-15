@@ -9,9 +9,7 @@
       class="new-note"
     ></textarea>
 
-    <button @click="addNote" class="add-note">
-      <img src="@/assets/plus.svg" class="icon" />
-    </button>
+    <button @click="addNote" class="add-btn" v-bind:class="{ visible: note.length > 0 }">add</button>
 
     <div class="notes">
       <div v-for="(note, index) in notes" :key="note.date" class="note">
@@ -73,10 +71,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  cursor: pointer;
-}
-
 textarea {
   padding: 0.5rem;
   border-radius: var(--border-radius);
@@ -89,21 +83,6 @@ textarea.new-note {
   border: none;
   background-color: var(--accent-color);
   vertical-align: middle;
-  margin-bottom: 1rem;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-}
-
-button.add-note {
-  position: relative;
-  top: 0.5rem;
-  left: 0.8rem;
-  padding: 0;
-  width: 40px;
-  height: 40px;
 }
 
 button.delete-note {
@@ -113,11 +92,12 @@ button.delete-note {
   width: 25px;
   height: 25px;
   padding: 0;
+  border: none;
 }
 
 .notes {
   padding: 0;
-  margin-top: 0;
+  margin-top: 1rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
