@@ -12,7 +12,12 @@
     <button @click="addNote" class="add-btn" v-bind:class="{ visible: note.length > 0 }">add</button>
 
     <div class="notes">
-      <div v-for="(note, index) in notes" :key="note.date" class="note">
+      <div
+        v-for="(note, index) in notes"
+        :key="note.date"
+        class="note"
+        v-bind:style="{ animation: `fade-in 0.5s ${index * 0.3}s ease-in-out forwards` }"
+      >
         <button @click="deleteNote(index)" class="delete-note">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
@@ -40,7 +45,8 @@ export default {
   methods: {
     addNote() {
       if (this.note != "") {
-        this.notes.push({ text: this.note, date: new Date().getTime() });
+        const newNote = { text: this.note, date: new Date().getTime() };
+        this.notes.splice(0, 0, newNote);
         this.note = "";
       }
     },
@@ -114,7 +120,7 @@ button.delete-note {
   margin: 2rem 2rem 0 0;
   color: var(--accent-color);
   position: relative;
-  animation: fade-in 0.5s ease-in;
+  opacity: 0;
 }
 
 .note textarea {
