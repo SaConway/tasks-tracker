@@ -72,6 +72,10 @@ button.add-btn {
     0.3s letter-spacing ease-in-out, 0s outline;
 }
 
+button.add-btn:focus:not(.visible) {
+  outline: none;
+}
+
 button.add-btn.visible {
   left: 1rem;
   visibility: visible;
