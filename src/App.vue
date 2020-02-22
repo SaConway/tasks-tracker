@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <navigation></navigation>
+    <Navigation></Navigation>
+    <ToggleTheme></ToggleTheme>
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -9,10 +10,12 @@
 
 <script>
 import Navigation from "./components/Navigation";
+import ToggleTheme from "./components/ToggleTheme";
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    ToggleTheme
   }
 };
 </script>
@@ -68,6 +71,7 @@ button.add-btn {
   font-weight: bolder;
   color: var(--accent-color);
   visibility: hidden;
+  z-index: -1;
   transition: 0.7s all ease-in-out, 0.3s font-size ease-in-out,
     0.3s letter-spacing ease-in-out, 0s outline;
 }

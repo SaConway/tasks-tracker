@@ -90,8 +90,8 @@ textarea {
 
 textarea.new-note {
   width: 30rem;
-  border: none;
-  background-color: var(--accent-color);
+  border: 1px solid #222831;
+  background-color: #eee;
   vertical-align: middle;
 }
 
@@ -106,13 +106,14 @@ button.delete-note {
 }
 
 .notes {
-  padding: 0;
+  padding: 0 0 2.5rem 0;
   margin-top: 1rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  max-height: calc(100vh - 16rem);
+  max-height: calc(100vh - 7rem);
+  overflow-x: auto;
 }
 
 .note {

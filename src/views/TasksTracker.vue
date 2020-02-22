@@ -17,8 +17,11 @@
         <p class="date">{{ date }}</p>
 
         <div v-for="task in filterTasksOfDate(date)" class="task" :key="date + task.date">
-          <input type="checkbox" v-model="task.done" tabindex="0" @change="doneTask(task.date)" />
-          <div class="checkbox-custom"></div>
+          <input type="checkbox" v-model="task.done" @change="doneTask(task.date)" />
+          <svg class="checkbox-custom">
+            <use v-if="task.done" xlink:href="#checked-icon" />
+            <use v-else xlink:href="#unchecked-icon" />
+          </svg>
 
           <input type="text" v-model="task.text" v-autoresize />
           <span class="task-time">[{{ getTimeDetails(task.date) }}]</span>
@@ -32,6 +35,20 @@
         </div>
       </div>
     </div>
+
+    <svg display="none">
+      <symbol id="checked-icon">
+        <path
+          d="M10.041 17l-4.5-4.319 1.395-1.435 3.08 2.937 7.021-7.183 1.422 1.409-8.418 8.591zm-5.041-15c-1.654 0-3 1.346-3 3v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-14c0-1.654-1.346-3-3-3h-14zm19 3v14c0 2.761-2.238 5-5 5h-14c-2.762 0-5-2.239-5-5v-14c0-2.761 2.238-5 5-5h14c2.762 0 5 2.239 5 5z"
+        />
+      </symbol>
+
+      <symbol id="unchecked-icon">
+        <path
+          d="M5 2c-1.654 0-3 1.346-3 3v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-14c0-1.654-1.346-3-3-3h-14zm19 3v14c0 2.761-2.238 5-5 5h-14c-2.762 0-5-2.239-5-5v-14c0-2.761 2.238-5 5-5h14c2.762 0 5 2.239 5 5z"
+        />
+      </symbol>
+    </svg>
   </div>
 </template>
 
@@ -201,8 +218,8 @@ input[type="text"] {
 }
 
 .new-task {
-  border: none;
-  background-color: var(--accent-color);
+  border: 1px solid #222831;
+  background-color: #eee;
   width: 20rem;
 }
 
@@ -230,8 +247,6 @@ p.date {
   margin: 2rem auto 1rem;
 }
 
-/* Checkbox */
-
 input[type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -242,24 +257,22 @@ input[type="checkbox"] {
   height: 24px;
 }
 
-input[type="checkbox"]:checked + .checkbox-custom::before {
-  content: url(../assets/checked.svg);
+input[type="checkbox"]:checked + .checkbox-custom {
   animation: tick 0.2s ease-in;
 }
 
-input[type="checkbox"]:focus + .checkbox-custom::before {
+input[type="checkbox"]:focus + .checkbox-custom {
   outline: 1px solid var(--primary-color);
   outline-offset: 5px;
 }
 
-.checkbox-custom::before {
-  content: url(../assets/unchecked.svg);
+.checkbox-custom {
   position: absolute;
   top: 5px;
   z-index: -1;
   height: 24px;
   width: 24px;
-  overflow: hidden;
+  fill: var(--accent-color);
 }
 
 @keyframes tick {

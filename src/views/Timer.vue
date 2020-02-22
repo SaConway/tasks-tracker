@@ -7,7 +7,6 @@
 
     <template v-if="status == 'off'">
       <input
-        class="start-timer"
         v-model="hours"
         maxlength="2"
         autofocus
@@ -142,12 +141,12 @@ button {
 }
 
 input {
-  background-color: var(--accent-color);
+  background-color: #eee;
   padding: 1rem;
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
   font-size: var(--normal-font-size);
-  color: var(--bg-color);
+  color: #222831;
   width: 5rem;
   text-align: center;
 }
@@ -178,8 +177,9 @@ span.time-period:last-of-type {
   width: 40%;
   margin: auto;
   border-radius: var(--border-radius);
-  background-color: var(--accent-color);
-  overflow-x: hidden;
+  background-color: #eee;
+  border: 1px solid #222831;
+  overflow: hidden;
   animation: fade-in 0.5s ease-in;
 }
 
