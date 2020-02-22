@@ -1,7 +1,5 @@
 <template>
-  <button @click="onToggleTheme">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12"/></svg>
-  </button>
+  <button @click="onToggleTheme"></button>
 </template>
 
 <script>
@@ -9,6 +7,8 @@ export default {
   mounted() {
     if (this.getTheme() === "light") {
       this.setTheme("light");
+    } else {
+      document.body.className = "dark-theme";
     }
   },
   methods: {
@@ -21,6 +21,8 @@ export default {
     },
     setTheme(theme) {
       localStorage.setItem("theme", theme);
+
+      document.body.className = `${theme}-theme`;
 
       document.documentElement.style.setProperty(
         "--bg-color",
@@ -38,18 +40,63 @@ export default {
 <style scoped>
 button {
   position: fixed;
-  bottom: .7rem;
+  bottom: 1rem;
   right: 1rem;
   border: none;
   cursor: pointer;
   z-index: 2;
+  background-color: var(--accent-color);
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  transition: 0.3s background-color ease-out;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  transition: 0.3s right ease-out, 0.3s background-color ease-out;
+}
+
+.dark-theme button::before {
+  animation: 0.3s toggle-right ease-out forwards;
+}
+
+.light-theme button::before {
+  animation: 0.3s toggle-left ease-out forwards;
 }
 
 button:focus {
   outline: none;
 }
 
-button svg {
-  fill: var(--accent-color);
+@keyframes toggle-left {
+  0% {
+    right: 0.25rem;
+  }
+  90% {
+    right: calc(100% - 1rem);
+  }
+  100% {
+    right: calc(100% - 1.25rem);
+  }
+}
+
+@keyframes toggle-right {
+  0% {
+    right: calc(100% - 1.25rem);
+  }
+  90% {
+    right: 0;
+  }
+  100% {
+    right: 0.25rem;
+  }
 }
 </style>
