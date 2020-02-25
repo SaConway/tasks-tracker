@@ -93,6 +93,7 @@ textarea.new-note {
   border: 1px solid #222831;
   background-color: #eee;
   vertical-align: middle;
+  overflow-y: hidden;
 }
 
 button.delete-note {

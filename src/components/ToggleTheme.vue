@@ -5,19 +5,21 @@
 <script>
 export default {
   mounted() {
-    if (this.getTheme() === "light") {
+    if (this.theme === "light") {
       this.setTheme("light");
     } else {
       document.body.className = "dark-theme";
     }
   },
+  data() {
+    return {
+      theme: localStorage.getItem("theme") || "dark"
+    };
+  },
   methods: {
     onToggleTheme() {
-      const theme = this.getTheme() === "light" ? "dark" : "light";
+      const theme = this.theme === "light" ? "dark" : "light";
       this.setTheme(theme);
-    },
-    getTheme() {
-      return localStorage.getItem("theme") || "dark";
     },
     setTheme(theme) {
       localStorage.setItem("theme", theme);
