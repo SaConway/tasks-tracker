@@ -9,7 +9,7 @@
     <input type="text" v-model="task.text" v-autoresize-width="200" />
     <span class="datetime">{{ getTimeDetails() }}</span>
     <button @click="$emit('delete-task', task.date)" class="delete-task">
-      <trushIcon></trushIcon>
+      <TrushIcon></TrushIcon>
     </button>
   </div>
 </template>
@@ -74,6 +74,7 @@ input[type="text"] {
   border: none;
   color: var(--accent-color);
   margin-left: 2.1rem;
+  font-size: var(--normal-font-size);
 }
 
 button.delete-task {

@@ -1,48 +1,62 @@
 <template>
   <div class="container">
-    <input
-      type="text"
-      placeholder="enter a new task.."
-      v-model="task"
-      ref="taskInput"
-      @keyup.enter="addTask"
-      class="new-task"
-      v-autoresize-width="320"
-    />
+    <div class="top-bar">
+      <input
+        type="text"
+        placeholder="enter a new task.."
+        class="new-task"
+        ref="taskInput"
+        v-model="task"
+        v-autoresize-width="400"
+        @keyup.enter="addTask"
+      />
 
-    <button @click="addTask" class="add-btn" :class="{ visible: task.length > 0 }">add</button>
+      <TasksFilters @filter-selected="setFilter($event)" />
+    </div>
 
     <div class="tasks">
-      <div v-for="date in filterUniqueDates(tasks)" :key="date">
-        <p class="date">{{ date }}</p>
+      <div v-for="tasks in orderedTasks" :key="tasks.date">
+        <template v-if="tasks.tasks.length">
+          <p class="date">{{ tasks.date }}</p>
 
-        <div v-for="task in filterTasksOfDate(date)" class="task" :key="date + task.date">
-          <task :task="task" v-on:delete-task="deleteTask($event)"></task>
-        </div>
+          <Task
+            v-for="task in tasks.tasks"
+            :key="tasks.date + task.date"
+            :task="task"
+            class="task"
+            @delete-task="deleteTask($event)"
+          ></Task>
+        </template>
       </div>
     </div>
 
-    <checkedIcons></checkedIcons>
+    <CheckedIcons />
   </div>
 </template>
 
 <script>
 import CheckedIcons from "../components/CheckedIcons";
 import Task from "../components/Task";
+import TasksFilters from "../components/TasksFilters";
 
 export default {
   data() {
     return {
       task: "",
-      tasks: JSON.parse(localStorage.getItem("tasks")) || []
+      tasks: JSON.parse(localStorage.getItem("tasks")) || [],
+      orderedTasks: [],
+      filter: "all"
     };
   },
   components: {
     CheckedIcons,
-    Task
+    Task,
+    TasksFilters
   },
   mounted() {
     this.$refs.taskInput.focus();
+
+    this.setOrderedTasks();
   },
   methods: {
     addTask() {
@@ -53,53 +67,54 @@ export default {
           date: new Date().getTime(),
           duration: null
         };
+
         this.tasks.splice(0, 0, newTask);
         this.task = "";
-        this.$refs.taskInput.style.width = "320px";
+        this.$refs.taskInput.style.width = "400px";
       }
     },
     deleteTask(date) {
-      const index = this.findIndex(date);
-
+      const index = this.tasks.findIndex(task => task.date === date);
       window.Vue.delete(this.tasks, index);
     },
-    filterTasksOfDate(date) {
-      return this.tasks.filter(task => this.toFullDate(task.date) == date);
-    },
-    findIndex(date) {
-      return this.tasks.findIndex(task => task.date === date);
-    },
-    filterUniqueDates() {
-      var flags = [],
-        output = [],
-        l = this.tasks.length,
-        i;
+    setFilter(filter) {
+      this.filter = filter;
 
-      for (i = 0; i < l; i++) {
-        const date = this.toFullDate(this.tasks[i].date);
-
-        if (flags[date]) continue;
-        flags[date] = true;
-        output.push(date);
-      }
-
-      return output;
+      this.setOrderedTasks();
     },
-    toFullDate(date) {
-      const dateNumber = new Date(date);
-      return (
-        dateNumber.getDate().toString() +
-        "/" +
-        (dateNumber.getMonth() + 1).toString() +
-        "/" +
-        dateNumber.getFullYear().toString()
-      );
+    setOrderedTasks() {
+      const uniqueDates = this.getUniqueDates();
+
+      this.orderedTasks = uniqueDates.map(date => {
+        return { date, tasks: this.filterTasks(date) };
+      });
+    },
+    getUniqueDates() {
+      const dates = this.tasks.map(task => this.toFullDate(task.date));
+      return [...new Set(dates)];
+    },
+    filterTasks(date) {
+      return this.tasks.filter(task => {
+        let res = this.toFullDate(task.date) === date;
+
+        if (this.filter === "all") {
+          return res;
+        } else if (this.filter === "unfinised-only") {
+          return res && !task.done;
+        }
+      });
+    },
+    toFullDate(dateString) {
+      const date = new Date(dateString);
+      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     }
   },
   watch: {
     tasks: {
       handler: function(val) {
         localStorage.setItem("tasks", JSON.stringify(val));
+
+        this.setOrderedTasks();
       },
       deep: true
     }
@@ -108,16 +123,18 @@ export default {
 </script>
 
 <style scoped>
-input[type="text"] {
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  font-size: var(--normal-font-size);
+.top-bar {
+  display: flex;
+  justify-content: space-between;
 }
 
 .new-task {
   border: 1px solid #222831;
   background-color: #eee;
-  width: 320px;
+  width: 400px;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: var(--normal-font-size);
 }
 
 .tasks {
@@ -126,10 +143,8 @@ input[type="text"] {
 }
 
 .task {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 1rem 0 0 1rem;
   position: relative;
-  animation: fade-in 0.5s ease-in;
 }
 
 p.date {

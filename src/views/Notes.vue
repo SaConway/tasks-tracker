@@ -9,8 +9,6 @@
       class="new-note"
     ></textarea>
 
-    <button @click="addNote" class="add-btn" v-bind:class="{ visible: note.length > 0 }">add</button>
-
     <div class="notes">
       <div
         v-for="(note, index) in notes"

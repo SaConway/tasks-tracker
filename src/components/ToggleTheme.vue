@@ -22,6 +22,7 @@ export default {
       this.setTheme(theme);
     },
     setTheme(theme) {
+      this.theme = theme;
       localStorage.setItem("theme", theme);
 
       document.body.className = `${theme}-theme`;
