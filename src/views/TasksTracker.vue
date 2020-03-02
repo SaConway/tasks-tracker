@@ -1,16 +1,7 @@
 <template>
   <div class="container">
     <div class="top-bar">
-      <input
-        type="text"
-        placeholder="enter a new task.."
-        class="new-task"
-        ref="taskInput"
-        v-model="task"
-        v-autoresize-width="400"
-        @keyup.enter="addTask"
-      />
-
+      <AddTask @add-task="addTask($event)" />
       <TasksFilters @filter-selected="setFilter($event)" />
     </div>
 
@@ -35,43 +26,38 @@
 </template>
 
 <script>
-import CheckedIcons from "../components/CheckedIcons";
-import Task from "../components/Task";
+import AddTask from "../components/AddTask";
 import TasksFilters from "../components/TasksFilters";
+import Task from "../components/Task";
+import CheckedIcons from "../components/CheckedIcons";
 
 export default {
   data() {
     return {
-      task: "",
       tasks: JSON.parse(localStorage.getItem("tasks")) || [],
       orderedTasks: [],
       filter: "all"
     };
   },
   components: {
+    AddTask,
     CheckedIcons,
     Task,
     TasksFilters
   },
   mounted() {
-    this.$refs.taskInput.focus();
-
     this.setOrderedTasks();
   },
   methods: {
-    addTask() {
-      if (this.task != "") {
-        const newTask = {
-          text: this.task,
-          done: false,
-          date: new Date().getTime(),
-          duration: null
-        };
+    addTask(task) {
+      const newTask = {
+        text: task,
+        done: false,
+        date: new Date().getTime(),
+        duration: null
+      };
 
-        this.tasks.splice(0, 0, newTask);
-        this.task = "";
-        this.$refs.taskInput.style.width = "400px";
-      }
+      this.tasks.splice(0, 0, newTask);
     },
     deleteTask(date) {
       const index = this.tasks.findIndex(task => task.date === date);
@@ -126,15 +112,6 @@ export default {
 .top-bar {
   display: flex;
   justify-content: space-between;
-}
-
-.new-task {
-  border: 1px solid #222831;
-  background-color: #eee;
-  width: 400px;
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  font-size: var(--normal-font-size);
 }
 
 .tasks {
