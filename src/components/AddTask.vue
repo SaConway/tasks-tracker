@@ -1,7 +1,6 @@
 <template>
   <input
     type="text"
-    autofocus
     placeholder="enter a new task.."
     class="new-task"
     ref="taskInput"

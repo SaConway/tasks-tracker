@@ -5,22 +5,7 @@
       <TasksFilters @filter-selected="setFilter($event)" />
     </div>
 
-    <div class="tasks">
-      <div v-for="tasks in orderedTasks" :key="tasks.date">
-        <template v-if="tasks.tasks.length">
-          <p class="date">{{ tasks.date }}</p>
-
-          <Task
-            v-for="task in tasks.tasks"
-            :key="tasks.date + task.date"
-            :task="task"
-            class="task"
-            @delete-task="deleteTask($event)"
-          ></Task>
-        </template>
-      </div>
-    </div>
-
+    <Tasks :tasks="orderedTasks" @delete-task="deleteTask($event)" />
     <CheckedIcons />
   </div>
 </template>
@@ -28,7 +13,7 @@
 <script>
 import AddTask from "../components/AddTask";
 import TasksFilters from "../components/TasksFilters";
-import Task from "../components/Task";
+import Tasks from "../components/Tasks";
 import CheckedIcons from "../components/CheckedIcons";
 
 export default {
@@ -42,10 +27,10 @@ export default {
   components: {
     AddTask,
     CheckedIcons,
-    Task,
+    Tasks,
     TasksFilters
   },
-  mounted() {
+  created() {
     this.setOrderedTasks();
   },
   methods: {
@@ -112,19 +97,5 @@ export default {
 .top-bar {
   display: flex;
   justify-content: space-between;
-}
-
-.tasks {
-  margin-top: 3rem;
-  color: var(--accent-color);
-}
-
-.task {
-  margin: 1rem 0 0 1rem;
-  position: relative;
-}
-
-p.date {
-  margin: 2rem auto 1rem;
 }
 </style>
