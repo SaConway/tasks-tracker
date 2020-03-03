@@ -1,16 +1,17 @@
 <template>
   <div class="container">
     <div class="top-bar">
-      <AddTask @add-task="addTask($event)" />
+      <AddTask />
       <TasksFilters @filter-selected="setFilter($event)" />
     </div>
 
-    <Tasks :tasks="orderedTasks" @delete-task="deleteTask($event)" />
+    <Tasks :tasks="orderedTasks" />
     <CheckedIcons />
   </div>
 </template>
 
 <script>
+import { tasksStore } from "../store/tasksStore";
 import AddTask from "../components/AddTask";
 import TasksFilters from "../components/TasksFilters";
 import Tasks from "../components/Tasks";
@@ -19,7 +20,7 @@ import CheckedIcons from "../components/CheckedIcons";
 export default {
   data() {
     return {
-      tasks: JSON.parse(localStorage.getItem("tasks")) || [],
+      tasks: tasksStore.state.tasks,
       orderedTasks: [],
       filter: "all"
     };
@@ -34,20 +35,6 @@ export default {
     this.setOrderedTasks();
   },
   methods: {
-    addTask(task) {
-      const newTask = {
-        text: task,
-        done: false,
-        date: new Date().getTime(),
-        duration: null
-      };
-
-      this.tasks.splice(0, 0, newTask);
-    },
-    deleteTask(date) {
-      const index = this.tasks.findIndex(task => task.date === date);
-      window.Vue.delete(this.tasks, index);
-    },
     setFilter(filter) {
       this.filter = filter;
 

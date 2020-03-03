@@ -4,28 +4,31 @@
     placeholder="enter a new task.."
     class="new-task"
     ref="taskInput"
-    v-model="task"
     v-autoresize-width="400"
     @keyup.enter="addTask"
   />
 </template>
 
 <script>
+import { tasksStore } from "../store/tasksStore";
+
 export default {
-  data() {
-    return {
-      task: ""
-    };
-  },
   mounted() {
     this.$refs.taskInput.focus();
   },
   methods: {
     addTask() {
-      if (this.task != "") {
-        this.$emit("add-task", this.task);
+      if (this.$refs.taskInput.value != "") {
+        const newTask = {
+          text: this.$refs.taskInput.value,
+          done: false,
+          date: new Date().getTime(),
+          duration: null
+        };
 
-        this.task = "";
+        tasksStore.addTask(newTask);
+
+        this.$refs.taskInput.value = "";
         this.$refs.taskInput.style.width = "400px";
       }
     }

@@ -4,13 +4,7 @@
       <template v-if="items.tasks.length">
         <p class="date">{{ items.date }}</p>
 
-        <Task
-          v-for="task in items.tasks"
-          :key="items.date + task.date"
-          :task="task"
-          class="task"
-          @delete-task="$emit('delete-task', $event)"
-        ></Task>
+        <Task v-for="task in items.tasks" :key="items.date + task.date" :task="task"></Task>
       </template>
     </div>
   </div>
@@ -33,12 +27,7 @@ export default {
   color: var(--accent-color);
 }
 
-.task {
-  margin: 1rem 0 0 1rem;
-  position: relative;
-}
-
-p.date {
+.date {
   margin: 2rem auto 1rem;
 }
 </style>

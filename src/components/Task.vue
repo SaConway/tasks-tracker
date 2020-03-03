@@ -1,59 +1,34 @@
 <template>
-  <div>
-    <input type="checkbox" v-model="task.done" @change="doneTask" />
-    <svg class="checkbox-custom">
-      <use v-if="task.done" xlink:href="#checked-icon" />
-      <use v-else xlink:href="#unchecked-icon" />
-    </svg>
+  <div class="task">
+    <TaskStatus :task="task" />
 
     <input type="text" v-model="task.text" v-autoresize-width="200" />
-    <span class="datetime">{{ getTimeDetails() }}</span>
-    <button @click="$emit('delete-task', task.date)" class="delete-task">
+    <span class="time-duration">[{{ task.date | taskTime }}{{ task.duration | taskDuration }}]</span>
+    <button @click="deleteTask" class="delete-task">
       <TrushIcon></TrushIcon>
     </button>
   </div>
 </template>
 
 <script>
+import { tasksStore } from "../store/tasksStore";
 import TrushIcon from "./TrushIcon";
+import TaskStatus from "./TaskStatus";
 
 export default {
   props: ["task"],
   components: {
-    TrushIcon
+    TrushIcon,
+    TaskStatus
   },
   methods: {
-    doneTask() {
-      if (this.task.done) {
-        const diff = new Date().getTime() - this.task.date;
-        this.task.duration = this.diffToDaysHrsMins(diff);
-      } else {
-        this.task.duration = null;
-      }
-    },
-    diffToDaysHrsMins(diff) {
-      let result = "";
-
-      const diffDays = Math.floor(diff / 86400000);
-      const diffHrs = Math.floor((diff % 86400000) / 3600000);
-      const diffMins = Math.round(((diff % 86400000) % 3600000) / 60000);
-
-      if (diffDays) result += diffDays + "d ";
-      if (diffHrs) result += diffHrs + "h ";
-      if (diffMins) result += diffMins + "m";
-
-      return result;
-    },
-    getTimeDetails() {
-      return (
-        "[" +
-        this.toHrsMins(this.task.date) +
-        (this.task.duration ? " | " + this.task.duration : "") +
-        "]"
-      );
-    },
-    toHrsMins(date) {
-      const dateNumber = new Date(date);
+    deleteTask() {
+      tasksStore.deleteTask(this.task);
+    }
+  },
+  filters: {
+    taskTime: function(value) {
+      const dateNumber = new Date(value);
 
       let hours = dateNumber.getHours().toString();
       let minutes = dateNumber.getMinutes().toString();
@@ -62,12 +37,20 @@ export default {
       if (minutes.length == 1) minutes = "0" + minutes;
 
       return hours + ":" + minutes;
+    },
+    taskDuration: function(value) {
+      return value ? " | " + value : "";
     }
   }
 };
 </script>
 
 <style scoped>
+.task {
+  margin: 1rem 0 0 1rem;
+  position: relative;
+}
+
 input[type="text"] {
   background-color: transparent;
   padding: 0.5rem;
@@ -77,7 +60,7 @@ input[type="text"] {
   font-size: var(--normal-font-size);
 }
 
-button.delete-task {
+.delete-task {
   width: 35px;
   border: none;
   vertical-align: middle;
@@ -85,57 +68,17 @@ button.delete-task {
   margin-left: 10px;
 }
 
-button.delete-task svg {
+.delete-task svg {
   vertical-align: middle;
   fill: var(--accent-color);
   transition: 0.3s transform ease-in-out;
 }
 
-button.delete-task:hover svg {
+.delete-task:hover svg {
   transform: scale(1.25, 1.25);
 }
 
-input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
-  top: 8px;
-  left: 2px;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-}
-
-input[type="checkbox"]:checked + .checkbox-custom {
-  animation: tick 0.2s ease-in;
-}
-
-input[type="checkbox"]:focus + .checkbox-custom {
-  outline: 1px solid var(--primary-color);
-  outline-offset: 5px;
-}
-
-.checkbox-custom {
-  position: absolute;
-  top: 5px;
-  z-index: -1;
-  height: 24px;
-  width: 24px;
-  fill: var(--accent-color);
-}
-
-.datetime {
+.time-duration {
   padding-left: 0.8rem;
-}
-
-@keyframes tick {
-  0% {
-    transform: scale(0);
-  }
-  90% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 </style>
