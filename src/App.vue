@@ -22,11 +22,10 @@ export default {
 
 <style>
 :root {
-  --bg-color: #222831;
-  --primary-color: #d65a31;
+  --primary-color: #222831;
+  --secondary-color: #d65a31;
   --accent-color: #eee;
   --border-radius: 0.2rem;
-  --header-font-size: 1rem;
   --normal-font-size: 1rem;
 }
 
@@ -38,15 +37,15 @@ export default {
 }
 
 html {
-  background-color: var(--bg-color);
+  background-color: var(--primary-color);
 }
 
 :focus {
-  outline: 1px solid var(--primary-color);
+  outline: 1px solid var(--secondary-color);
 }
 
 ::selection {
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color: var(--accent-color);
 }
 
@@ -55,12 +54,11 @@ button {
   cursor: pointer;
 }
 
-#app {
-  height: 100vh;
-}
-
 .container {
-  padding: 3rem 3rem 3rem 11rem;
+  width: 95%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 3rem 3rem 3rem 9.5rem;
   opacity: 0;
   animation: 1.5s fade-in ease-in-out forwards;
 }

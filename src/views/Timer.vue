@@ -185,7 +185,7 @@ span.time-period:last-of-type {
 
 .bar {
   height: 15px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   transition: width 0.1s linear;
 }
 

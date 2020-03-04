@@ -28,7 +28,7 @@ export default {
       document.body.className = `${theme}-theme`;
 
       document.documentElement.style.setProperty(
-        "--bg-color",
+        "--primary-color",
         theme === "light" ? "#eee" : "#222831"
       );
       document.documentElement.style.setProperty(
@@ -62,7 +62,7 @@ button::before {
   transform: translateY(-50%);
   width: 1rem;
   height: 1rem;
-  background-color: var(--bg-color);
+  background-color: var(--primary-color);
   border-radius: 50%;
   transition: 0.3s right ease-out, 0.3s background-color ease-out;
 }

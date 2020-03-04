@@ -48,6 +48,10 @@ export default {
   font-size: 0.7rem;
 }
 
+.filter-btn:focus {
+  outline: none;
+}
+
 .filter-btn.selected {
   animation: 0.3s selected forwards;
 }
@@ -60,7 +64,7 @@ export default {
   }
   100% {
     transform: translateY(0);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
 }
 </style>

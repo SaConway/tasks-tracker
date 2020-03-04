@@ -49,7 +49,7 @@ export default {
 }
 
 .original-checkbox:focus + .checkbox-custom {
-  outline: 1px solid var(--primary-color);
+  outline: 1px solid var(--secondary-color);
   outline-offset: 5px;
 }
 

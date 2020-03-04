@@ -48,12 +48,9 @@
 .nav {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--accent-color);
-  overflow-x: hidden;
-  width: 115px;
+  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
-  left: 0;
   height: 100%;
   z-index: 2;
   padding-top: 1.3rem;
@@ -84,7 +81,7 @@
 }
 
 .link.router-link-exact-active svg .hoverable-icon {
-  fill: var(--primary-color);
+  fill: var(--secondary-color);
 }
 
 .link:not(.router-link-exact-active):hover .hoverable-icon {
@@ -123,7 +120,7 @@ h3 {
 }
 
 .link.router-link-exact-active h3 {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 @keyframes slide-in {
