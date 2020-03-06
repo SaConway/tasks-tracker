@@ -1,6 +1,6 @@
 <template>
   <div class="task">
-    <TaskStatus :task="task" />
+    <TaskListItemStatus :task="task" />
 
     <input type="text" v-model="task.text" v-autoresize-width="200" />
     <span class="time-duration">[{{ task.date | taskTime }}{{ task.duration | taskDuration }}]</span>
@@ -13,13 +13,13 @@
 <script>
 import { tasksStore } from "../store/tasksStore";
 import IconTrush from "./IconTrush";
-import TaskStatus from "./TaskStatus";
+import TaskListItemStatus from "./TaskListItemStatus";
 
 export default {
   props: ["task"],
   components: {
     IconTrush,
-    TaskStatus
+    TaskListItemStatus
   },
   methods: {
     deleteTask() {
