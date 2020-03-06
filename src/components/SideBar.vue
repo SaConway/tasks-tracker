@@ -54,6 +54,7 @@
   height: 100%;
   z-index: 2;
   padding-top: 1.3rem;
+  background-color: var(--primary-color);
 }
 
 .link {

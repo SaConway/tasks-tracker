@@ -44,5 +44,6 @@ export default {
   padding: 0.5rem;
   border-radius: var(--border-radius);
   font-size: var(--normal-font-size);
+  max-width: 600px;
 }
 </style>
