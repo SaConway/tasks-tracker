@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import TasksTracker from "../views/TasksTracker.vue";
+import Tasks from "../views/Tasks.vue";
 
 Vue.use(VueRouter);
 
@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: "/tasks-tracker",
-    component: TasksTracker
+    component: Tasks
   },
   {
     path: "/timer",
