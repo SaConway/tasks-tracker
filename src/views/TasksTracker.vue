@@ -81,6 +81,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  width: auto;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;

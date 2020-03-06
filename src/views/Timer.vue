@@ -130,6 +130,11 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  width: auto;
+  text-align: center;
+}
+
 button {
   color: var(--accent-color);
   width: 7rem;
@@ -174,8 +179,8 @@ span.time-period:last-of-type {
 
 .progress {
   height: 15px;
-  width: 40%;
-  margin: auto;
+  width: 30rem;
+  margin: 2rem auto;
   border-radius: var(--border-radius);
   background-color: #eee;
   border: 1px solid #222831;

@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Navigation></Navigation>
     <ToggleTheme></ToggleTheme>
     <keep-alive>
       <router-view />
     </keep-alive>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -47,6 +47,11 @@ html {
 ::selection {
   background: var(--secondary-color);
   color: var(--accent-color);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
