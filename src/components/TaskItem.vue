@@ -5,20 +5,20 @@
     <input type="text" v-model="task.text" v-autoresize-width="200" />
     <span class="time-duration">[{{ task.date | taskTime }}{{ task.duration | taskDuration }}]</span>
     <button @click="deleteTask" class="delete-task">
-      <TrushIcon></TrushIcon>
+      <IconTrush></IconTrush>
     </button>
   </div>
 </template>
 
 <script>
 import { tasksStore } from "../store/tasksStore";
-import TrushIcon from "./TrushIcon";
+import IconTrush from "./IconTrush";
 import TaskStatus from "./TaskStatus";
 
 export default {
   props: ["task"],
   components: {
-    TrushIcon,
+    IconTrush,
     TaskStatus
   },
   methods: {

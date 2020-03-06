@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <div class="top-bar">
-      <AddTask />
-      <TasksFilters @filter-selected="setFilter($event)" />
+      <TaskAdd />
+      <TaskFilters @filter-selected="setFilter($event)" />
     </div>
 
-    <Tasks :tasks="orderedTasks" />
-    <CheckedIcons />
+    <TaskList :tasks="orderedTasks" />
+    <IconsCheckBox />
   </div>
 </template>
 
 <script>
 import { tasksStore } from "../store/tasksStore";
-import AddTask from "../components/AddTask";
-import TasksFilters from "../components/TasksFilters";
-import Tasks from "../components/Tasks";
-import CheckedIcons from "../components/CheckedIcons";
+import TaskAdd from "../components/TaskAdd";
+import TaskFilters from "../components/TaskFilters";
+import TaskList from "../components/TaskList";
+import IconsCheckBox from "../components/IconsCheckBox";
 
 export default {
   data() {
@@ -26,10 +26,10 @@ export default {
     };
   },
   components: {
-    AddTask,
-    CheckedIcons,
-    Tasks,
-    TasksFilters
+    TaskAdd,
+    IconsCheckBox,
+    TaskList,
+    TaskFilters
   },
   created() {
     this.setOrderedTasks();

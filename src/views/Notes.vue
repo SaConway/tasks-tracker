@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <AddNote />
-    <Notes />
+    <NoteAdd />
+    <NoteList />
   </div>
 </template>
 
 <script>
-import AddNote from "../components/AddNote";
-import Notes from "../components/Notes";
+import NoteAdd from "../components/NoteAdd";
+import NoteList from "../components/NoteList";
 
 export default {
   components: {
-    AddNote,
-    Notes
+    NoteAdd,
+    NoteList
   }
 };
 </script>

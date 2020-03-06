@@ -1,6 +1,6 @@
 <template>
   <div class="notes">
-    <Note
+    <NoteItem
       v-for="(note, index) in notes"
       :key="note.date"
       :note="note"
@@ -11,11 +11,11 @@
 
 <script>
 import { notesStore } from "../store/notesStore";
-import Note from "../components/Note";
+import NoteItem from "../components/NoteItem";
 
 export default {
   components: {
-    Note
+    NoteItem
   },
   data() {
     return {

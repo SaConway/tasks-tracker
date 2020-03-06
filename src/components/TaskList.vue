@@ -4,19 +4,19 @@
       <template v-if="items.tasks.length">
         <p class="date">{{ items.date }}</p>
 
-        <Task v-for="task in items.tasks" :key="items.date + task.date" :task="task"></Task>
+        <TaskItem v-for="task in items.tasks" :key="items.date + task.date" :task="task" />
       </template>
     </div>
   </div>
 </template>
 
 <script>
-import Task from "./Task";
+import TaskItem from "./TaskItem";
 
 export default {
   props: ["tasks"],
   components: {
-    Task
+    TaskItem
   }
 };
 </script>

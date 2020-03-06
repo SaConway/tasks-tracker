@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <Navigation></Navigation>
-    <ToggleTheme></ToggleTheme>
+    <SideBar />
+    <ToggleTheme />
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
+import SideBar from "./components/SideBar";
 import ToggleTheme from "./components/ToggleTheme";
 
 export default {
   components: {
-    Navigation,
+    SideBar,
     ToggleTheme
   }
 };
