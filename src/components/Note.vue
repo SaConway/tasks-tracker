@@ -1,24 +1,40 @@
 <template>
   <div class="note">
-    <button @click="deleteNote(index)" class="delete-note">
-      <svg viewBox="0 0 24 24">
-        <path
-          d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
-        />
-      </svg>
+    <button class="note-delete" @click="deleteNote">
+      <DeleteIcon />
     </button>
-    <textarea v-model="note.text" v-autoresize-height></textarea>
+
+    <textarea class="note-input" v-model="note.text" v-autoresize-height></textarea>
   </div>
 </template>
 
 <script>
+import { notesStore } from "../store/notesStore";
+import DeleteIcon from "../components/DeleteIcon";
+
 export default {
-  props: ["note"]
+  components: {
+    DeleteIcon
+  },
+  props: ["note"],
+  methods: {
+    deleteNote() {
+      notesStore.deleteNote(this.note);
+    }
+  }
 };
 </script>
 
 <style scoped>
-textarea {
+.note {
+  width: 15rem;
+  margin: 2rem 2rem 0 0;
+  color: var(--accent-color);
+  position: relative;
+  opacity: 0;
+}
+
+.note-input {
   width: 100%;
   color: var(--accent-color);
   background-color: transparent;
@@ -30,7 +46,7 @@ textarea {
   overflow-y: hidden;
 }
 
-.delete-note {
+.note-delete {
   position: absolute;
   top: 5px;
   left: 2px;
@@ -40,14 +56,14 @@ textarea {
   border: none;
 }
 
-.delete-note svg {
+.note-delete svg {
   height: 15px;
   width: 15px;
   fill: var(--accent-color);
   transition: 0.3s transform ease-in-out;
 }
 
-.delete-note:hover svg {
+.note-delete:hover svg {
   transform: scale(1.05, 1.05);
 }
 </style>

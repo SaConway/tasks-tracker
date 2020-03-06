@@ -9,14 +9,24 @@
 </template>
 
 <script>
+import { notesStore } from "../store/notesStore";
+
 export default {
   mounted() {
     this.$refs.noteInput.focus();
   },
   methods: {
     addNote() {
-      this.$emit("add-note", this.$refs.noteInput.value);
-      this.$refs.noteInput.value = "";
+      if (this.$refs.noteInput.value != "") {
+        const newNote = {
+          text: this.$refs.noteInput.value,
+          date: new Date().getTime()
+        };
+
+        notesStore.addNote(newNote);
+
+        this.$refs.noteInput.value = "";
+      }
     }
   }
 };
