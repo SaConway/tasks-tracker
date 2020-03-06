@@ -1,13 +1,6 @@
 <template>
   <div class="container">
-    <textarea
-      placeholder="enter a new note.."
-      v-model="note"
-      ref="notetexterea"
-      @keyup.ctrl.enter="addNote"
-      v-autoresize
-      class="new-note"
-    ></textarea>
+    <AddNote @add-note="addNote($event)" />
 
     <div class="notes">
       <div
@@ -23,29 +16,29 @@
             />
           </svg>
         </button>
-        <textarea v-model="note.text" v-autoresize></textarea>
+        <textarea v-model="note.text" v-autoresize-height></textarea>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AddNote from "../components/AddNote";
+
 export default {
+  components: {
+    AddNote
+  },
   data() {
     return {
-      note: "",
       notes: JSON.parse(localStorage.getItem("notes")) || []
     };
   },
-  mounted() {
-    this.$refs.notetexterea.focus();
-  },
   methods: {
-    addNote() {
-      if (this.note != "") {
-        const newNote = { text: this.note, date: new Date().getTime() };
+    addNote(note) {
+      if (note != "") {
+        const newNote = { text: note, date: new Date().getTime() };
         this.notes.splice(0, 0, newNote);
-        this.note = "";
       }
     },
     deleteNote(index) {
@@ -59,21 +52,6 @@ export default {
       },
       deep: true
     }
-  },
-  directives: {
-    autoresize: {
-      inserted: function(el) {
-        el.style.height = el.scrollHeight + "px";
-
-        function OnInput() {
-          this.style.height = "auto";
-          this.style.height = this.scrollHeight + "px";
-        }
-
-        el.addEventListener("keyup", OnInput);
-        el.addEventListener("change", OnInput);
-      }
-    }
   }
 };
 </script>
@@ -84,14 +62,6 @@ textarea {
   border-radius: var(--border-radius);
   resize: none;
   font-size: var(--normal-font-size);
-}
-
-textarea.new-note {
-  width: 30rem;
-  border: 1px solid #222831;
-  background-color: #eee;
-  vertical-align: middle;
-  overflow-y: hidden;
 }
 
 button.delete-note {
