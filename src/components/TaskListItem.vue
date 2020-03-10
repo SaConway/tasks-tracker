@@ -61,9 +61,7 @@ input[type="text"] {
 }
 
 .delete-task {
-  width: 35px;
   border: none;
-  vertical-align: middle;
   padding: 0.4rem;
   margin-left: 10px;
 }
@@ -80,5 +78,6 @@ input[type="text"] {
 
 .time-duration {
   padding-left: 0.8rem;
+  font-size: 0.8rem;
 }
 </style>

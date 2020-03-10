@@ -59,7 +59,7 @@ export default {
 /* Animatinos */
 
 @keyframes selected {
-  75% {
+  50% {
     transform: translateY(3px);
   }
   100% {

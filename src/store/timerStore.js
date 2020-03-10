@@ -87,6 +87,6 @@ export const timerStore = {
     this.playSound();
   },
   resetTitle() {
-    document.title = "Minimal Productivity Apps";
+    document.title = "Pao | Productivity and Organization Solutions";
   }
 };

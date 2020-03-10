@@ -82,11 +82,12 @@ export default {
 
 <style scoped>
 .container {
-  width: auto;
+  max-width: 1200px;
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 </style>
