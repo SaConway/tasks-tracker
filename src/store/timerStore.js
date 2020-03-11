@@ -87,6 +87,6 @@ export const timerStore = {
     this.playSound();
   },
   resetTitle() {
-    document.title = "Pao | Productivity and Organization Solutions";
+    document.title = "Pao: Productivity and Organization Solutions";
   }
 };
