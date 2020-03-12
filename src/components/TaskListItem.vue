@@ -1,7 +1,6 @@
 <template>
   <div class="task">
     <TaskListItemStatus :task="task" />
-
     <input type="text" v-model="task.text" v-autoresize-width="200" />
     <span class="time-duration">[{{ task.date | taskTime }}{{ task.duration | taskDuration }}]</span>
     <button @click="deleteTask" class="delete-task">
