@@ -1,6 +1,4 @@
 module.exports = {
   publicPath:
-    process.env.NODE_ENV === "production"
-      ? "https://saconway.github.io/minimal-productivity-apps"
-      : "/"
+    process.env.NODE_ENV === "production" ? "/minimal-productivity-apps/" : "/"
 };
