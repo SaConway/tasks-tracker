@@ -10,6 +10,7 @@
 
 <script>
 import { notesStore } from "../store/notesStore";
+import { AutoResizeHeight } from "../directives/AutoResizeHeight";
 import IconDelete from "../components/IconDelete";
 
 export default {
@@ -17,6 +18,9 @@ export default {
     IconDelete
   },
   props: ["note"],
+  directives: {
+    AutoResizeHeight
+  },
   methods: {
     deleteNote() {
       notesStore.deleteNote(this.note);

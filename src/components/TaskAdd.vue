@@ -11,8 +11,12 @@
 
 <script>
 import { tasksStore } from "../store/tasksStore";
+import AutoReszeWidth from "../directives/AutoResizeWidth";
 
 export default {
+  directives: {
+    AutoReszeWidth
+  },
   mounted() {
     this.$refs.taskInput.focus();
   },

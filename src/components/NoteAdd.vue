@@ -9,9 +9,13 @@
 </template>
 
 <script>
+import { AutoResizeHeight } from "../directives/AutoResizeHeight";
 import { notesStore } from "../store/notesStore";
 
 export default {
+  directives: {
+    AutoResizeHeight
+  },
   mounted() {
     this.$refs.noteInput.focus();
   },

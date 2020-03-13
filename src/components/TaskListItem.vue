@@ -11,6 +11,7 @@
 
 <script>
 import { tasksStore } from "../store/tasksStore";
+import AutoReszeWidth from "../directives/AutoResizeWidth";
 import IconTrush from "./IconTrush";
 import TaskListItemStatus from "./TaskListItemStatus";
 
@@ -19,6 +20,9 @@ export default {
   components: {
     IconTrush,
     TaskListItemStatus
+  },
+  directives: {
+    AutoReszeWidth
   },
   methods: {
     deleteTask() {
