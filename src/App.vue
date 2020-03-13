@@ -22,11 +22,11 @@ export default {
 
 <style>
 :root {
-  --primary-color: #222831;
-  --secondary-color: #d65a31;
-  --accent-color: #eee;
+  --clr-primary: #222831;
+  --clr-secondary: #d65a31;
+  --clr-accent: #eee;
   --border-radius: 0.2rem;
-  --normal-font-size: 1rem;
+  --font-size-normal: 1rem;
 }
 
 * {
@@ -37,16 +37,16 @@ export default {
 }
 
 html {
-  background-color: var(--primary-color);
+  background-color: var(--clr-primary);
 }
 
 :focus {
-  outline: 1px solid var(--secondary-color);
+  outline: 1px solid var(--clr-secondary);
 }
 
 ::selection {
-  background: var(--secondary-color);
-  color: var(--accent-color);
+  background: var(--clr-secondary);
+  color: var(--clr-accent);
 }
 
 main {
@@ -66,11 +66,11 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-color);
+  background: var(--clr-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
+  background: var(--clr-accent);
 }
 
 .container {

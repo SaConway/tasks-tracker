@@ -46,17 +46,17 @@ export default {
 input {
   background-color: #eee;
   padding: 1rem;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--clr-accent);
   border-radius: var(--border-radius);
-  font-size: var(--normal-font-size);
+  font-size: var(--font-size-normal);
   color: #222831;
   width: 5rem;
   text-align: center;
 }
 
 .time-period {
-  color: var(--accent-color);
-  font-size: var(--normal-font-size);
+  color: var(--clr-accent);
+  font-size: var(--font-size-normal);
   vertical-align: middle;
   margin-right: 2rem;
   margin-left: 1rem;

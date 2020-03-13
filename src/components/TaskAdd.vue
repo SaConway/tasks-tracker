@@ -47,7 +47,7 @@ export default {
   width: 400px;
   padding: 0.5rem;
   border-radius: var(--border-radius);
-  font-size: var(--normal-font-size);
+  font-size: var(--font-size-normal);
   max-width: 600px;
 }
 </style>

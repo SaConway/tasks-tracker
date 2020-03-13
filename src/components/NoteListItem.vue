@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .note {
-  color: var(--accent-color);
+  color: var(--clr-accent);
   position: relative;
   opacity: 0;
   margin: 0 1rem 1rem 0;
@@ -39,10 +39,10 @@ export default {
 
 .note-input {
   width: 100%;
-  color: var(--accent-color);
+  color: var(--clr-accent);
   background-color: transparent;
-  font-size: var(--normal-font-size);
-  border: 1px solid var(--accent-color);
+  font-size: var(--font-size-normal);
+  border: 1px solid var(--clr-accent);
   border-radius: var(--border-radius);
   padding: 2.5rem 1rem;
   resize: none;
@@ -62,7 +62,7 @@ export default {
 .note-delete svg {
   height: 15px;
   width: 15px;
-  fill: var(--accent-color);
+  fill: var(--clr-accent);
   transition: 0.3s transform ease-in-out;
 }
 

@@ -40,7 +40,7 @@ export default {
 }
 
 .filter-btn {
-  color: var(--accent-color);
+  color: var(--clr-accent);
   padding: 0.4rem 1rem;
   margin: 0 0.3rem;
   border: 1px solid currentColor;
@@ -64,7 +64,7 @@ export default {
   }
   100% {
     transform: translateY(0);
-    background-color: var(--secondary-color);
+    background-color: var(--clr-secondary);
   }
 }
 </style>

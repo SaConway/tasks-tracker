@@ -57,17 +57,17 @@ export default {
 }
 
 button {
-  color: var(--accent-color);
+  color: var(--clr-accent);
   width: 7rem;
   margin-right: 1rem;
   padding: 1rem;
-  font-size: var(--normal-font-size);
-  border: 1px solid var(--accent-color);
+  font-size: var(--font-size-normal);
+  border: 1px solid var(--clr-accent);
   border-radius: var(--border-radius);
 }
 
 p.countdown {
-  color: var(--accent-color);
+  color: var(--clr-accent);
   font-size: 4rem;
   letter-spacing: 0.5rem;
   text-align: center;
@@ -88,7 +88,7 @@ p.countdown {
 
 .bar {
   height: 15px;
-  background-color: var(--secondary-color);
+  background-color: var(--clr-secondary);
   transition: width 0.1s linear;
 }
 

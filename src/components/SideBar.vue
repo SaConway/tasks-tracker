@@ -54,7 +54,7 @@
   height: 100%;
   z-index: 2;
   padding-top: 1.3rem;
-  background-color: var(--primary-color);
+  background-color: var(--clr-primary);
 }
 
 .link {
@@ -76,18 +76,18 @@
 }
 
 .link svg .hoverable-icon {
-  fill: var(--accent-color);
+  fill: var(--clr-accent);
   transition: 0.3s fill ease-in-out, 0.3s transform ease-in-out;
   transform-origin: 50% 50%;
 }
 
 .link.router-link-exact-active svg .hoverable-icon {
-  fill: var(--secondary-color);
+  fill: var(--clr-secondary);
 }
 
 .link:not(.router-link-exact-active):hover .hoverable-icon {
   transform: scale(1.25, 1.25);
-  fill: var(--accent-color);
+  fill: var(--clr-accent);
 }
 
 .link svg .shade-icon {
@@ -114,14 +114,14 @@
 }
 
 h3 {
-  color: var(--accent-color);
+  color: var(--clr-accent);
   font-size: 0.7rem;
   margin-top: 0.7rem;
   transition: 0.5s color ease-in-out;
 }
 
 .link.router-link-exact-active h3 {
-  color: var(--secondary-color);
+  color: var(--clr-secondary);
 }
 
 @keyframes slide-in {

@@ -28,11 +28,11 @@ export default {
       document.body.className = `${theme}-theme`;
 
       document.documentElement.style.setProperty(
-        "--primary-color",
+        "--clr-primary",
         theme === "light" ? "#eee" : "#222831"
       );
       document.documentElement.style.setProperty(
-        "--accent-color",
+        "--clr-accent",
         theme === "light" ? "#222831" : "#eee"
       );
     }
@@ -48,7 +48,7 @@ button {
   border: none;
   cursor: pointer;
   z-index: 2;
-  background-color: var(--accent-color);
+  background-color: var(--clr-accent);
   width: 2.5rem;
   height: 1.5rem;
   border-radius: 2rem;
@@ -62,7 +62,7 @@ button::before {
   transform: translateY(-50%);
   width: 1rem;
   height: 1rem;
-  background-color: var(--primary-color);
+  background-color: var(--clr-primary);
   border-radius: 50%;
   transition: 0.3s right ease-out, 0.3s background-color ease-out;
 }

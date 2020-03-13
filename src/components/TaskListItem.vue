@@ -58,9 +58,9 @@ input[type="text"] {
   background-color: transparent;
   padding: 0.5rem;
   border: none;
-  color: var(--accent-color);
+  color: var(--clr-accent);
   margin-left: 2.1rem;
-  font-size: var(--normal-font-size);
+  font-size: var(--font-size-normal);
 }
 
 .delete-task {
@@ -71,7 +71,7 @@ input[type="text"] {
 
 .delete-task svg {
   vertical-align: middle;
-  fill: var(--accent-color);
+  fill: var(--clr-accent);
   transition: 0.3s transform ease-in-out;
 }
 

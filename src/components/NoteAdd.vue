@@ -39,7 +39,7 @@ export default {
 <style scoped>
 textarea.new-note {
   width: 30rem;
-  font-size: var(--normal-font-size);
+  font-size: var(--font-size-normal);
   background-color: #eee;
   padding: 0.5rem;
   border: 1px solid #222831;

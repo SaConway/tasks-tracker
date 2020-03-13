@@ -24,7 +24,7 @@ export default {
 <style scoped>
 .tasks {
   margin-top: 3rem;
-  color: var(--accent-color);
+  color: var(--clr-accent);
 }
 
 .date {

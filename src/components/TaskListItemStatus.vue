@@ -49,7 +49,7 @@ export default {
 }
 
 .original-checkbox:focus + .checkbox-custom {
-  outline: 1px solid var(--secondary-color);
+  outline: 1px solid var(--clr-secondary);
   outline-offset: 5px;
 }
 
@@ -59,7 +59,7 @@ export default {
   z-index: -1;
   height: 24px;
   width: 24px;
-  fill: var(--accent-color);
+  fill: var(--clr-accent);
 }
 
 @keyframes tick {
