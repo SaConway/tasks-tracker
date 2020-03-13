@@ -31,8 +31,6 @@ export default {
 
 <style scoped>
 .note {
-  width: 15rem;
-  margin: 2rem 2rem 0 0;
   color: var(--accent-color);
   position: relative;
   opacity: 0;

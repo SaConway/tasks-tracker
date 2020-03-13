@@ -35,13 +35,9 @@ export default {
 
 <style scoped>
 .notes {
-  padding: 0 0 2.5rem 0;
-  margin-top: 1rem;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  max-height: calc(100vh - 7rem);
-  overflow-x: auto;
+  padding-bottom: 2.5rem;
+  margin-top: 3rem;
+  columns: 5;
+  column-gap: 10px;
 }
 </style>

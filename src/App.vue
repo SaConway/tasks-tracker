@@ -59,6 +59,20 @@ button {
   cursor: pointer;
 }
 
+/* scroll bar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(18, 29, 44, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+}
+
 .container {
   width: 95%;
   height: 100vh;
