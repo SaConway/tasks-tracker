@@ -10,8 +10,8 @@
 </template>
 
 <script>
+import { AutoReszeWidth } from "../directives/AutoResizeWidth";
 import { tasksStore } from "../store/tasksStore";
-import AutoReszeWidth from "../directives/AutoResizeWidth";
 
 export default {
   directives: {

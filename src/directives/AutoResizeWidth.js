@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-Vue.directive("autoresize-width", {
+export const AutoResizeWidth = {
   inserted: function(el, binding) {
     el.style.width =
       (el.scrollWidth > binding.value ? el.scrollWidth : binding.value) + "px";
@@ -14,4 +14,6 @@ Vue.directive("autoresize-width", {
     el.addEventListener("keyup", onInput);
     el.addEventListener("change", onInput);
   }
-});
+};
+
+Vue.directive("autoresize-width", AutoResizeWidth);

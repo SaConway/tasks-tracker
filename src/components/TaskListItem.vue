@@ -11,7 +11,7 @@
 
 <script>
 import { tasksStore } from "../store/tasksStore";
-import AutoReszeWidth from "../directives/AutoResizeWidth";
+import { AutoReszeWidth } from "../directives/AutoResizeWidth";
 import IconTrush from "./IconTrush";
 import TaskListItemStatus from "./TaskListItemStatus";
 

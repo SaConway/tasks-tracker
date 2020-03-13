@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-Vue.directive("autoresize-height", {
+export const AutoResizeHeight = {
   inserted: function(el) {
     el.style.height = el.scrollHeight + "px";
 
@@ -12,4 +12,6 @@ Vue.directive("autoresize-height", {
     el.addEventListener("keyup", OnInput);
     el.addEventListener("change", OnInput);
   }
-});
+};
+
+Vue.directive("autoresize-height", AutoResizeHeight);
