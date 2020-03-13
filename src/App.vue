@@ -66,7 +66,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(18, 29, 44, 0.4);
+  background: var(--primary-color);
 }
 
 ::-webkit-scrollbar-thumb {
