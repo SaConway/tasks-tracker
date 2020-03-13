@@ -19,7 +19,7 @@ export const timerStore = {
       Number(this.state.output.hours) * 60 * 60 +
       Number(this.state.output.minutes) * 60;
 
-    this.state.worker = new Worker("timer.js");
+    this.state.worker = new Worker("static/timer.js");
     const data = { type: "start", timer };
 
     this.state.worker.postMessage(data);
