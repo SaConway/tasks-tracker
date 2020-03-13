@@ -34,6 +34,7 @@ export default {
   color: var(--accent-color);
   position: relative;
   opacity: 0;
+  margin: 0 1rem 1rem 0;
 }
 
 .note-input {

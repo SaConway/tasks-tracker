@@ -38,6 +38,6 @@ export default {
   padding-bottom: 2.5rem;
   margin-top: 3rem;
   columns: 5;
-  column-gap: 10px;
+  gap: 0;
 }
 </style>
