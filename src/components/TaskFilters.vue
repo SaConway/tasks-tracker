@@ -52,19 +52,11 @@ export default {
   outline: none;
 }
 
-.filter-btn.selected {
-  animation: 0.3s selected forwards;
+.filter-btn:active {
+  transform: translateY(3px);
 }
 
-/* Animatinos */
-
-@keyframes selected {
-  50% {
-    transform: translateY(3px);
-  }
-  100% {
-    transform: translateY(0);
-    background-color: var(--clr-secondary);
-  }
+.filter-btn.selected {
+  background-color: var(--clr-secondary);
 }
 </style>
