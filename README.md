@@ -3,7 +3,7 @@
 
 I needed a tool for my work managing tasks and writing down notes, but must of the tools out there are either complicated or lacking a nice and solid UI. So I decided to make one that suits my needs. It's minimal and includs Tasks Tracker, Timer and Notes manager.
 
-All data is stored in localStorage.
+(data is stored in localStorage)
 
 Have a look [here](https://saconway.github.io/minimal-productivity-apps/).
 
