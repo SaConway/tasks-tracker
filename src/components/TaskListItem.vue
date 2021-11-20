@@ -2,7 +2,7 @@
   <div class="task">
     <TaskListItemStatus :task="task" />
     <input type="text" v-model="task.text" v-autoresize-width="200" />
-    <span class="time-duration">[{{ task.date | taskTime }}{{ task.duration | taskDuration }}]</span>
+    <span class="time-duration">[{{ task.date | taskTime }}]</span>
     <button @click="deleteTask" class="delete-task">
       <IconTrush></IconTrush>
     </button>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import { tasksStore } from "../store/tasksStore";
-import { AutoReszeWidth } from "../directives/AutoResizeWidth";
-import IconTrush from "./IconTrush";
-import TaskListItemStatus from "./TaskListItemStatus";
+import { tasksStore } from '../store/tasksStore'
+import { AutoReszeWidth } from '../directives/AutoResizeWidth'
+import IconTrush from './IconTrush'
+import TaskListItemStatus from './TaskListItemStatus'
 
 export default {
-  props: ["task"],
+  props: ['task'],
   components: {
     IconTrush,
     TaskListItemStatus
@@ -26,35 +26,37 @@ export default {
   },
   methods: {
     deleteTask() {
-      tasksStore.deleteTask(this.task);
+      tasksStore.deleteTask(this.task)
     }
   },
   filters: {
     taskTime: function(value) {
-      const dateNumber = new Date(value);
+      const dateNumber = new Date(value)
 
-      let hours = dateNumber.getHours().toString();
-      let minutes = dateNumber.getMinutes().toString();
+      const date = `${dateNumber.getDate()}/${dateNumber.getMonth() + 1}/${dateNumber.getFullYear()}`
 
-      if (hours.length == 1) hours = "0" + hours;
-      if (minutes.length == 1) minutes = "0" + minutes;
+      let hours = dateNumber.getHours().toString()
+      let minutes = dateNumber.getMinutes().toString()
 
-      return hours + ":" + minutes;
+      if (hours.length == 1) hours = '0' + hours
+      if (minutes.length == 1) minutes = '0' + minutes
+
+      return date + ', ' + hours + ':' + minutes
     },
     taskDuration: function(value) {
-      return value ? " | " + value : "";
+      return value ? ' | ' + value : ''
     }
   }
-};
+}
 </script>
 
 <style scoped>
 .task {
-  margin: 1rem 0 0 1rem;
+  margin: 1rem 0 0 0;
   position: relative;
 }
 
-input[type="text"] {
+input[type='text'] {
   background-color: transparent;
   padding: 0.5rem;
   border: none;
@@ -81,6 +83,6 @@ input[type="text"] {
 
 .time-duration {
   padding-left: 0.8rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 </style>

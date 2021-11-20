@@ -2,8 +2,6 @@
   <div class="tasks">
     <div v-for="items in tasks" :key="items.date">
       <template v-if="items.tasks.length">
-        <p class="date">{{ items.date }}</p>
-
         <TaskListItem v-for="task in items.tasks" :key="items.date + task.date" :task="task" />
       </template>
     </div>
@@ -11,14 +9,14 @@
 </template>
 
 <script>
-import TaskListItem from "./TaskListItem";
+import TaskListItem from './TaskListItem'
 
 export default {
-  props: ["tasks"],
+  props: ['tasks'],
   components: {
     TaskListItem
   }
-};
+}
 </script>
 
 <style scoped>

@@ -11,19 +11,19 @@
 </template>
 
 <script>
-import { tasksStore } from "../store/tasksStore";
-import TaskAdd from "../components/TaskAdd";
-import TaskFilters from "../components/TaskFilters";
-import TaskList from "../components/TaskList";
-import IconsCheckBox from "../components/IconsCheckBox";
+import { tasksStore } from '../store/tasksStore'
+import TaskAdd from '../components/TaskAdd'
+import TaskFilters from '../components/TaskFilters'
+import TaskList from '../components/TaskList'
+import IconsCheckBox from '../components/IconsCheckBox'
 
 export default {
   data() {
     return {
       tasks: tasksStore.state.tasks,
       orderedTasks: [],
-      filter: "all"
-    };
+      filter: 'all'
+    }
   },
   components: {
     TaskAdd,
@@ -32,57 +32,57 @@ export default {
     TaskFilters
   },
   created() {
-    this.setOrderedTasks();
+    this.setOrderedTasks()
   },
   methods: {
     setFilter(filter) {
-      this.filter = filter;
+      this.filter = filter
 
-      this.setOrderedTasks();
+      this.setOrderedTasks()
     },
     setOrderedTasks() {
-      const uniqueDates = this.getUniqueDates();
+      const uniqueDates = this.getUniqueDates()
 
       this.orderedTasks = uniqueDates.map(date => {
-        return { date, tasks: this.filterTasks(date) };
-      });
+        return { date, tasks: this.filterTasks(date) }
+      })
     },
     getUniqueDates() {
-      const dates = this.tasks.map(task => this.toFullDate(task.date));
-      return [...new Set(dates)];
+      const dates = this.tasks.map(task => this.toFullDate(task.date))
+      return [...new Set(dates)]
     },
     filterTasks(date) {
       return this.tasks.filter(task => {
-        let res = this.toFullDate(task.date) === date;
+        let res = this.toFullDate(task.date) === date
 
-        if (this.filter === "all") {
-          return res;
-        } else if (this.filter === "unfinised-only") {
-          return res && !task.done;
+        if (this.filter === 'all') {
+          return res
+        } else if (this.filter === 'unfinised-only') {
+          return res && !task.done
         }
-      });
+      })
     },
     toFullDate(dateString) {
-      const date = new Date(dateString);
-      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+      const date = new Date(dateString)
+      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     }
   },
   watch: {
     tasks: {
       handler: function(val) {
-        localStorage.setItem("tasks", JSON.stringify(val));
+        localStorage.setItem('tasks', JSON.stringify(val))
 
-        this.setOrderedTasks();
+        this.setOrderedTasks()
       },
       deep: true
     }
   }
-};
+}
 </script>
 
 <style scoped>
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .top-bar {
