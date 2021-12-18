@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { tasksStore } from '@/store/tasks'
 import { tagsStore } from '@/store/tags'
 import TaskAdd from '@/components/TaskAdd'

@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { AutoResizeHeight } from '@/directives/AutoResizeHeight'
 import { notesStore } from '@/store/notes'
 

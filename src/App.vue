@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// IMPORTS
 import SideBar from '@/components/SideBar'
 import ToggleTheme from '@/components/ToggleTheme'
 

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { notesStore } from '@/store/notes'
 import NoteListItem from '@/components/NoteListItem'
 

@@ -30,6 +30,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { timerStore } from '@/store/timer'
 import TimerInput from '@/components/TimerInput'
 
@@ -37,7 +38,7 @@ export default {
   components: {
     TimerInput
   },
-  data: function() {
+  data() {
     return {
       data: timerStore.state.output
     }

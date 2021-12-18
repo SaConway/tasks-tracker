@@ -11,6 +11,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { timerStore } from '@/store/timer'
 
 export default {

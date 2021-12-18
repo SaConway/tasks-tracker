@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// IMPORTS
 import NoteAdd from '@/components/NoteAdd'
 import NoteList from '@/components/NoteList'
 

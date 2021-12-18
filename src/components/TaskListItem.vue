@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// IMPORTS
 import { tasksStore } from '@/store/tasks'
 import { AutoResizeWidth } from '@/directives/AutoResizeWidth'
 import IconTrash from '@/components/IconTrash'
