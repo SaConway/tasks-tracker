@@ -10,9 +10,6 @@ export default {
   directives: {
     AutoResizeHeight
   },
-  mounted() {
-    this.$refs.noteInput.focus()
-  },
   methods: {
     addNote() {
       if (this.$refs.noteInput.value != '') {
@@ -26,6 +23,9 @@ export default {
         this.$refs.noteInput.value = ''
       }
     }
+  },
+  mounted() {
+    this.$refs.noteInput.focus()
   }
 }
 </script>

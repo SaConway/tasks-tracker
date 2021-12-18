@@ -25,6 +25,12 @@ import TaskList from '@/components/TaskList'
 import IconsCheckBox from '@/components/IconsCheckBox'
 
 export default {
+  components: {
+    TaskAdd,
+    IconsCheckBox,
+    TaskList,
+    TaskFilters
+  },
   data() {
     return {
       tasks: tasksStore.state.tasks,
@@ -32,15 +38,6 @@ export default {
       filter: 'all',
       tags: tagsStore.state.tags
     }
-  },
-  components: {
-    TaskAdd,
-    IconsCheckBox,
-    TaskList,
-    TaskFilters
-  },
-  created() {
-    this.setOrderedTasks()
   },
   methods: {
     setFilter(filter) {
@@ -84,6 +81,9 @@ export default {
       },
       deep: true
     }
+  },
+  created() {
+    this.setOrderedTasks()
   }
 }
 </script>

@@ -4,13 +4,6 @@
 
 <script>
 export default {
-  mounted() {
-    if (this.theme === 'light') {
-      this.setTheme('light')
-    } else {
-      document.body.className = 'dark-theme'
-    }
-  },
   data() {
     return {
       theme: localStorage.getItem('theme') || 'dark'
@@ -29,6 +22,13 @@ export default {
 
       document.documentElement.style.setProperty('--clr-primary', theme === 'light' ? '#eee' : '#222831')
       document.documentElement.style.setProperty('--clr-accent', theme === 'light' ? '#222831' : '#eee')
+    }
+  },
+  mounted() {
+    if (this.theme === 'light') {
+      this.setTheme('light')
+    } else {
+      document.body.className = 'dark-theme'
     }
   }
 }

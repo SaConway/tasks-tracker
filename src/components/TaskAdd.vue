@@ -28,13 +28,6 @@ import { tasksStore } from '@/store/tasks'
 import { tagsStore } from '@/store/tags'
 
 export default {
-  data() {
-    return {
-      selectedTag: '',
-      newTag: '',
-      showNewTagInput: false
-    }
-  },
   props: {
     tags: {
       type: Array,
@@ -47,8 +40,12 @@ export default {
   directives: {
     AutoResizeWidth
   },
-  mounted() {
-    this.$refs.taskInput.focus()
+  data() {
+    return {
+      selectedTag: '',
+      newTag: '',
+      showNewTagInput: false
+    }
   },
   methods: {
     addTask() {
@@ -84,6 +81,9 @@ export default {
         this.$refs.newTagEle.focus()
       })
     }
+  },
+  mounted() {
+    this.$refs.taskInput.focus()
   }
 }
 </script>

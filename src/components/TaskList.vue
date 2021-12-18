@@ -14,6 +14,9 @@
 import TaskListItem from '@/components/TaskListItem'
 
 export default {
+  components: {
+    TaskListItem
+  },
   props: {
     tasks: {
       type: Array,
@@ -22,9 +25,6 @@ export default {
       },
       required: false
     }
-  },
-  components: {
-    TaskListItem
   }
 }
 </script>

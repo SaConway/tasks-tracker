@@ -12,17 +12,17 @@ export default {
       selectedFilter: 'all'
     }
   },
-  created() {
-    this.filters = [
-      { type: 'all', title: 'All' },
-      { type: 'unfinished-only', title: 'Unfinished Only' }
-    ]
-  },
   methods: {
     setFilter(filter) {
       this.selectedFilter = filter
       this.$emit('filter-selected', filter)
     }
+  },
+  created() {
+    this.filters = [
+      { type: 'all', title: 'All' },
+      { type: 'unfinished-only', title: 'Unfinished Only' }
+    ]
   }
 }
 </script>

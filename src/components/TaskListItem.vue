@@ -23,6 +23,13 @@ import IconTrash from '@/components/IconTrash'
 import TaskListItemStatus from '@/components/TaskListItemStatus'
 
 export default {
+  components: {
+    IconTrash,
+    TaskListItemStatus
+  },
+  directives: {
+    AutoResizeWidth
+  },
   props: {
     task: {
       type: Object,
@@ -32,17 +39,10 @@ export default {
       required: false
     }
   },
-  components: {
-    IconTrash,
-    TaskListItemStatus
-  },
   computed: {
     tag() {
       return this.task.tags?.[0] || ''
     }
-  },
-  directives: {
-    AutoResizeWidth
   },
   methods: {
     deleteTask() {

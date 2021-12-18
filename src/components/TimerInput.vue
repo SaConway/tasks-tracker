@@ -19,9 +19,6 @@ export default {
       data: timerStore.state.output
     }
   },
-  mounted() {
-    this.$refs.hoursInput.focus()
-  },
   methods: {
     onInputChange() {
       this.data.hours = this.data.hours.replace(/[^\d]+/g, '')
@@ -30,6 +27,9 @@ export default {
     startTimer() {
       timerStore.startTimer()
     }
+  },
+  mounted() {
+    this.$refs.hoursInput.focus()
   }
 }
 </script>
