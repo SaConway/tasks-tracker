@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { AutoReszeWidth } from '@/directives/AutoResizeWidth'
+import { AutoResizeWidth } from '@/directives/AutoResizeWidth'
 import { tasksStore } from '@/store/tasks'
 import { tagsStore } from '@/store/tags'
 
@@ -45,7 +45,7 @@ export default {
     }
   },
   directives: {
-    AutoReszeWidth
+    AutoResizeWidth
   },
   mounted() {
     this.$refs.taskInput.focus()

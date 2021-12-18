@@ -65,7 +65,7 @@ export default {
 
         if (this.filter === 'all') {
           return res
-        } else if (this.filter === 'unfinised-only') {
+        } else if (this.filter === 'unfinished-only') {
           return res && !task.done
         }
       })

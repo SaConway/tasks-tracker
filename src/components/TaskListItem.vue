@@ -11,15 +11,15 @@
 
     <!-- DELETE -->
     <button class="delete-task" @click="deleteTask">
-      <icon-trush></icon-trush>
+      <icon-trash></icon-trash>
     </button>
   </div>
 </template>
 
 <script>
 import { tasksStore } from '@/store/tasks'
-import { AutoReszeWidth } from '@/directives/AutoResizeWidth'
-import IconTrush from '@/components/IconTrush'
+import { AutoResizeWidth } from '@/directives/AutoResizeWidth'
+import IconTrash from '@/components/IconTrash'
 import TaskListItemStatus from '@/components/TaskListItemStatus'
 
 export default {
@@ -33,7 +33,7 @@ export default {
     }
   },
   components: {
-    IconTrush,
+    IconTrash,
     TaskListItemStatus
   },
   computed: {
@@ -42,7 +42,7 @@ export default {
     }
   },
   directives: {
-    AutoReszeWidth
+    AutoResizeWidth
   },
   methods: {
     deleteTask() {

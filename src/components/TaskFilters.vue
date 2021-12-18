@@ -15,7 +15,7 @@ export default {
   created() {
     this.filters = [
       { type: 'all', title: 'All' },
-      { type: 'unfinised-only', title: 'Unfinished Only' }
+      { type: 'unfinished-only', title: 'Unfinished Only' }
     ]
   },
   methods: {
