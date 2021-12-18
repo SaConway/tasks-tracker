@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="top-bar">
-      <TaskAdd />
+      <TaskAdd :tags="tags" />
       <TaskFilters @filter-selected="setFilter($event)" />
     </div>
 
@@ -12,6 +12,7 @@
 
 <script>
 import { tasksStore } from '../store/tasksStore'
+import { tagsStore } from '../store/tagsStore'
 import TaskAdd from '../components/TaskAdd'
 import TaskFilters from '../components/TaskFilters'
 import TaskList from '../components/TaskList'
@@ -22,7 +23,8 @@ export default {
     return {
       tasks: tasksStore.state.tasks,
       orderedTasks: [],
-      filter: 'all'
+      filter: 'all',
+      tags: tagsStore.state.tags
     }
   },
   components: {

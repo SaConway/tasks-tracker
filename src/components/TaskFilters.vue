@@ -1,12 +1,6 @@
 <template>
   <div class="filters">
-    <button
-      v-for="filter in filters"
-      :key="filter.type"
-      :class="{ selected: selectedFilter === filter.type }"
-      class="filter-btn"
-      @click="setFilter(filter.type)"
-    >{{ filter.title }}</button>
+    <button v-for="filter in filters" :key="filter.type" :class="{ selected: selectedFilter === filter.type }" class="filter-btn" @click="setFilter(filter.type)">{{ filter.title }}</button>
   </div>
 </template>
 
@@ -15,22 +9,22 @@ export default {
   data() {
     return {
       filters: [],
-      selectedFilter: "all"
-    };
+      selectedFilter: 'all'
+    }
   },
   created() {
     this.filters = [
-      { type: "all", title: "All" },
-      { type: "unfinised-only", title: "Unfinished Only" }
-    ];
+      { type: 'all', title: 'All' },
+      { type: 'unfinised-only', title: 'Unfinished Only' }
+    ]
   },
   methods: {
     setFilter(filter) {
-      this.selectedFilter = filter;
-      this.$emit("filter-selected", filter);
+      this.selectedFilter = filter
+      this.$emit('filter-selected', filter)
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -46,10 +40,6 @@ export default {
   border: 1px solid currentColor;
   border-radius: var(--border-radius);
   font-size: 0.7rem;
-}
-
-.filter-btn:focus {
-  outline: none;
 }
 
 .filter-btn:active {

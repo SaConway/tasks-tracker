@@ -2,7 +2,8 @@
   <div class="task">
     <TaskListItemStatus :task="task" />
     <input type="text" v-model="task.text" v-autoresize-width="200" />
-    <span class="time-duration">[{{ task.date | taskTime }}]</span>
+    <span v-if="tag" class="tag">{{ tag }}</span>
+    <!-- <span class="time-duration">{{ task.date | taskTime }}</span> -->
     <button @click="deleteTask" class="delete-task">
       <IconTrush></IconTrush>
     </button>
@@ -20,6 +21,11 @@ export default {
   components: {
     IconTrush,
     TaskListItemStatus
+  },
+  computed: {
+    tag() {
+      return this.task.tags?.[0] || ''
+    }
   },
   directives: {
     AutoReszeWidth
@@ -52,23 +58,27 @@ export default {
 
 <style scoped>
 .task {
-  margin: 1rem 0 0 0;
+  margin-top: 1rem;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 input[type='text'] {
-  background-color: transparent;
+  margin-left: 2rem;
+  margin-right: 1rem;
   padding: 0.5rem;
+  background-color: transparent;
   border: none;
   color: var(--clr-accent);
-  margin-left: 2.1rem;
   font-size: var(--font-size-normal);
+  border-radius: var(--border-radius);
 }
 
 .delete-task {
   border: none;
+  border-radius: var(--border-radius);
   padding: 0.4rem;
-  margin-left: 10px;
 }
 
 .delete-task svg {
@@ -84,5 +94,15 @@ input[type='text'] {
 .time-duration {
   padding-left: 0.8rem;
   font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.tag {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  border-radius: 100vmax;
+  font-size: 0.65rem;
+  margin-right: 0.6rem;
+  padding: 0.25rem 0.5rem;
 }
 </style>

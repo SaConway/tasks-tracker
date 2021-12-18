@@ -1,23 +1,23 @@
 <template>
   <main id="app">
     <SideBar />
-    <ToggleTheme />
     <keep-alive>
       <router-view />
     </keep-alive>
+    <ToggleTheme />
   </main>
 </template>
 
 <script>
-import SideBar from "./components/SideBar";
-import ToggleTheme from "./components/ToggleTheme";
+import SideBar from './components/SideBar'
+import ToggleTheme from './components/ToggleTheme'
 
 export default {
   components: {
     SideBar,
     ToggleTheme
   }
-};
+}
 </script>
 
 <style>
@@ -30,7 +30,7 @@ export default {
 }
 
 * {
-  font-family: "B612 Mono", monospace;
+  font-family: 'B612 Mono', monospace;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -41,7 +41,12 @@ html {
 }
 
 :focus {
+  outline: none;
+}
+
+:focus-visible {
   outline: 1px solid var(--clr-secondary);
+  outline-offset: 3px;
 }
 
 ::selection {

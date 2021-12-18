@@ -10,27 +10,27 @@
 
 <script>
 export default {
-  props: ["task"],
+  props: ['task'],
   methods: {
     doneTask() {
-      this.task.duration = this.task.done ? this.getDuration() : null;
+      this.task.duration = this.task.done ? this.getDuration() : null
     },
     getDuration() {
-      const diff = new Date().getTime() - this.task.date;
-      let result = "";
+      const diff = new Date().getTime() - this.task.date
+      let result = ''
 
-      const diffDays = Math.floor(diff / 86400000);
-      const diffHrs = Math.floor((diff % 86400000) / 3600000);
-      const diffMins = Math.round(((diff % 86400000) % 3600000) / 60000);
+      const diffDays = Math.floor(diff / 86400000)
+      const diffHrs = Math.floor((diff % 86400000) / 3600000)
+      const diffMins = Math.round(((diff % 86400000) % 3600000) / 60000)
 
-      if (diffDays) result += diffDays + "d ";
-      if (diffHrs) result += diffHrs + "h ";
-      if (diffMins) result += diffMins + "m";
+      if (diffDays) result += diffDays + 'd '
+      if (diffHrs) result += diffHrs + 'h '
+      if (diffMins) result += diffMins + 'm'
 
-      return result;
+      return result
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -42,6 +42,7 @@ export default {
   cursor: pointer;
   width: 24px;
   height: 24px;
+  border-radius: var(--border-radius);
 }
 
 .original-checkbox:checked + .checkbox-custom {
@@ -60,6 +61,7 @@ export default {
   height: 24px;
   width: 24px;
   fill: var(--clr-accent);
+  border-radius: var(--border-radius);
 }
 
 @keyframes tick {

@@ -5,39 +5,33 @@
 <script>
 export default {
   mounted() {
-    if (this.theme === "light") {
-      this.setTheme("light");
+    if (this.theme === 'light') {
+      this.setTheme('light')
     } else {
-      document.body.className = "dark-theme";
+      document.body.className = 'dark-theme'
     }
   },
   data() {
     return {
-      theme: localStorage.getItem("theme") || "dark"
-    };
+      theme: localStorage.getItem('theme') || 'dark'
+    }
   },
   methods: {
     onToggleTheme() {
-      const theme = this.theme === "light" ? "dark" : "light";
-      this.setTheme(theme);
+      const theme = this.theme === 'light' ? 'dark' : 'light'
+      this.setTheme(theme)
     },
     setTheme(theme) {
-      this.theme = theme;
-      localStorage.setItem("theme", theme);
+      this.theme = theme
+      localStorage.setItem('theme', theme)
 
-      document.body.className = `${theme}-theme`;
+      document.body.className = `${theme}-theme`
 
-      document.documentElement.style.setProperty(
-        "--clr-primary",
-        theme === "light" ? "#eee" : "#222831"
-      );
-      document.documentElement.style.setProperty(
-        "--clr-accent",
-        theme === "light" ? "#222831" : "#eee"
-      );
+      document.documentElement.style.setProperty('--clr-primary', theme === 'light' ? '#eee' : '#222831')
+      document.documentElement.style.setProperty('--clr-accent', theme === 'light' ? '#222831' : '#eee')
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -56,7 +50,7 @@ button {
 }
 
 button::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -73,10 +67,6 @@ button::before {
 
 .light-theme button::before {
   animation: 0.3s toggle-left ease-out forwards;
-}
-
-button:focus {
-  outline: none;
 }
 
 @keyframes toggle-left {
