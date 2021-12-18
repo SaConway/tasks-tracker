@@ -31,7 +31,7 @@
 
 <script>
 // IMPORTS
-import { timerStore } from '@/store/timer'
+import timerStore from '@/store/timer'
 import TimerInput from '@/components/TimerInput'
 
 export default {

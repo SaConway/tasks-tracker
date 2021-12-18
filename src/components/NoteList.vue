@@ -6,7 +6,7 @@
 
 <script>
 // IMPORTS
-import { notesStore } from '@/store/notes'
+import notesStore from '@/store/notes'
 import NoteListItem from '@/components/NoteListItem'
 
 export default {

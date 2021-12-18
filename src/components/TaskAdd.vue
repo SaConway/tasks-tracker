@@ -25,8 +25,8 @@
 <script>
 // IMPORTS
 import { AutoResizeWidth } from '@/directives/AutoResizeWidth'
-import { tasksStore } from '@/store/tasks'
-import { tagsStore } from '@/store/tags'
+import tasksStore from '@/store/tasks'
+import tagsStore from '@/store/tags'
 
 export default {
   props: {

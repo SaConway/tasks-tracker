@@ -12,7 +12,7 @@
 
 <script>
 // IMPORTS
-import { timerStore } from '@/store/timer'
+import timerStore from '@/store/timer'
 
 export default {
   data() {

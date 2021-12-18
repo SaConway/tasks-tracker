@@ -5,7 +5,7 @@
 <script>
 // IMPORTS
 import { AutoResizeHeight } from '@/directives/AutoResizeHeight'
-import { notesStore } from '@/store/notes'
+import notesStore from '@/store/notes'
 
 export default {
   directives: {

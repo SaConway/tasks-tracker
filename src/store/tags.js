@@ -1,4 +1,4 @@
-export const tagsStore = {
+export default {
   state: {
     tags: JSON.parse(localStorage.getItem('tags')) || []
   },

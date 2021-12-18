@@ -12,7 +12,7 @@
 
 <script>
 // IMPORTS
-import { notesStore } from '@/store/notes'
+import notesStore from '@/store/notes'
 import { AutoResizeHeight } from '@/directives/AutoResizeHeight'
 import IconDelete from '@/components/IconDelete'
 
