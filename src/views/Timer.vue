@@ -4,7 +4,7 @@
     <button v-if="data.status != 'off'" @click="stopTimer">Stop</button>
 
     <!-- PAUSE BUTTON -->
-    <button v-if="data.status == 'on'" @click="pauseTimer" key="pause-btn">Pause</button>
+    <button v-if="data.status == 'on'" key="pause-btn" @click="pauseTimer">Pause</button>
 
     <!-- RESUME BUTTON -->
     <button v-else-if="data.status == 'pause'" @click="resumeTimer">Resume</button>
@@ -14,7 +14,7 @@
       <timer-input />
 
       <!-- START BUTTON -->
-      <button @click="startTimer" class="start-btn" key="start-btn">Start</button>
+      <button class="start-btn" key="start-btn" @click="startTimer">Start</button>
     </template>
 
     <template v-if="data.countdown != null">

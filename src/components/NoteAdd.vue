@@ -1,5 +1,5 @@
 <template>
-  <textarea placeholder="enter a new note.." class="new-note" ref="noteInput" v-autoresize-height @keyup.ctrl.enter="addNote"></textarea>
+  <textarea class="new-note" placeholder="enter a new note.." ref="noteInput" v-autoresize-height @keyup.ctrl.enter="addNote"></textarea>
 </template>
 
 <script>

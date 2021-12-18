@@ -1,6 +1,6 @@
 <template>
   <div class="filters">
-    <button v-for="filter in filters" :key="filter.type" :class="{ selected: selectedFilter === filter.type }" class="filter-btn" @click="setFilter(filter.type)">{{ filter.title }}</button>
+    <button :class="{ selected: selectedFilter === filter.type }" class="filter-btn" v-for="filter in filters" :key="filter.type" @click="setFilter(filter.type)">{{ filter.title }}</button>
   </div>
 </template>
 

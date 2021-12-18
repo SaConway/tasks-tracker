@@ -10,7 +10,7 @@
     <span v-if="tag" class="tag">{{ tag }}</span>
 
     <!-- DELETE -->
-    <button @click="deleteTask" class="delete-task">
+    <button class="delete-task" @click="deleteTask">
       <icon-trush></icon-trush>
     </button>
   </div>

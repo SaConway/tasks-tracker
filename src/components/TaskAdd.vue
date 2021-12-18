@@ -1,7 +1,7 @@
 <template>
   <form class="form">
     <!-- NEW TASK INPUT -->
-    <input type="text" placeholder="enter a new task.." class="new-task" ref="taskInput" v-autoresize-width="500" @keyup.enter="addTask" />
+    <input class="new-task" type="text" placeholder="enter a new task.." ref="taskInput" v-autoresize-width="500" @keyup.enter="addTask" />
 
     <!-- TAGS -->
     <div class="tags">
@@ -17,7 +17,7 @@
       <button v-if="!showNewTagInput" class="tag" @click="addTag">+ Tag</button>
 
       <!-- NEW TAG INPUT -->
-      <input v-if="showNewTagInput" type="text" class="tag" placeholder="enter a tag" ref="newTagEle" v-model="newTag" v-autoresize-width="175" @keyup.enter="addTask" />
+      <input v-if="showNewTagInput" class="tag" type="text" placeholder="enter a tag" ref="newTagEle" v-model="newTag" v-autoresize-width="175" @keyup.enter="addTask" />
     </div>
   </form>
 </template>

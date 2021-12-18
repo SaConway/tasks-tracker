@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- CHECK BOX -->
-    <input type="checkbox" class="original-checkbox" v-model="task.done" @change="doneTask" />
+    <input class="original-checkbox" type="checkbox" v-model="task.done" @change="doneTask" />
 
     <!-- ICONS -->
     <svg class="checkbox-custom">
