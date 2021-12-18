@@ -24,8 +24,8 @@
 
 <script>
 import { AutoReszeWidth } from '../directives/AutoResizeWidth'
-import { tasksStore } from '../store/tasksStore'
-import { tagsStore } from '../store/tagsStore'
+import { tasksStore } from '../store/tasks'
+import { tagsStore } from '../store/tags'
 
 export default {
   data() {

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { tasksStore } from '../store/tasksStore'
+import { tasksStore } from '../store/tasks'
 import { AutoReszeWidth } from '../directives/AutoResizeWidth'
 import IconTrush from './IconTrush'
 import TaskListItemStatus from './TaskListItemStatus'
