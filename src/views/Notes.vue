@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import NoteAdd from '../components/NoteAdd'
-import NoteList from '../components/NoteList'
+import NoteAdd from '@/components/NoteAdd'
+import NoteList from '@/components/NoteList'
 
 export default {
   components: {

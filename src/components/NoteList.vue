@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { notesStore } from '../store/notes'
-import NoteListItem from '../components/NoteListItem'
+import { notesStore } from '@/store/notes'
+import NoteListItem from '@/components/NoteListItem'
 
 export default {
   components: {

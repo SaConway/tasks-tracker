@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import { timerStore } from '../store/timer'
-import TimerInput from '../components/TimerInput'
+import { timerStore } from '@/store/timer'
+import TimerInput from '@/components/TimerInput'
 
 export default {
   components: {

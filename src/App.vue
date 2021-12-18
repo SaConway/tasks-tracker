@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import SideBar from './components/SideBar'
-import ToggleTheme from './components/ToggleTheme'
+import SideBar from '@/components/SideBar'
+import ToggleTheme from '@/components/ToggleTheme'
 
 export default {
   components: {

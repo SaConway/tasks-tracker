@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import { AutoResizeHeight } from '../directives/AutoResizeHeight'
-import { notesStore } from '../store/notes'
+import { AutoResizeHeight } from '@/directives/AutoResizeHeight'
+import { notesStore } from '@/store/notes'
 
 export default {
   directives: {

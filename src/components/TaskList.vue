@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TaskListItem from './TaskListItem'
+import TaskListItem from '@/components/TaskListItem'
 
 export default {
   props: ['tasks'],

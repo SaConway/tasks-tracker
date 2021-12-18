@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import { notesStore } from '../store/notes'
-import { AutoResizeHeight } from '../directives/AutoResizeHeight'
-import IconDelete from '../components/IconDelete'
+import { notesStore } from '@/store/notes'
+import { AutoResizeHeight } from '@/directives/AutoResizeHeight'
+import IconDelete from '@/components/IconDelete'
 
 export default {
   components: {

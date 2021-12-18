@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import { tasksStore } from '../store/tasks'
-import { AutoReszeWidth } from '../directives/AutoResizeWidth'
-import IconTrush from './IconTrush'
-import TaskListItemStatus from './TaskListItemStatus'
+import { tasksStore } from '@/store/tasks'
+import { AutoReszeWidth } from '@/directives/AutoResizeWidth'
+import IconTrush from '@/components/IconTrush'
+import TaskListItemStatus from '@/components/TaskListItemStatus'
 
 export default {
   props: ['task'],

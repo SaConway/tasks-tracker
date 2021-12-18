@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import { tasksStore } from '../store/tasks'
-import { tagsStore } from '../store/tags'
-import TaskAdd from '../components/TaskAdd'
-import TaskFilters from '../components/TaskFilters'
-import TaskList from '../components/TaskList'
-import IconsCheckBox from '../components/IconsCheckBox'
+import { tasksStore } from '@/store/tasks'
+import { tagsStore } from '@/store/tags'
+import TaskAdd from '@/components/TaskAdd'
+import TaskFilters from '@/components/TaskFilters'
+import TaskList from '@/components/TaskList'
+import IconsCheckBox from '@/components/IconsCheckBox'
 
 export default {
   data() {
