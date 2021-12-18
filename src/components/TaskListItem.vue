@@ -1,9 +1,15 @@
 <template>
   <div class="task">
+    <!-- STATUS -->
     <task-list-item-status :task="task" />
+
+    <!-- INPUT -->
     <input type="text" v-model="task.text" v-autoresize-width="200" />
+
+    <!-- TAG -->
     <span v-if="tag" class="tag">{{ tag }}</span>
-    <!-- <span class="time-duration">{{ task.date | taskTime }}</span> -->
+
+    <!-- DELETE -->
     <button @click="deleteTask" class="delete-task">
       <icon-trush></icon-trush>
     </button>

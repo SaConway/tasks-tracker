@@ -1,17 +1,22 @@
 <template>
   <form class="form">
+    <!-- NEW TASK INPUT -->
     <input type="text" placeholder="enter a new task.." class="new-task" ref="taskInput" v-autoresize-width="500" @keyup.enter="addTask" />
 
+    <!-- TAGS -->
     <div class="tags">
       <template v-if="!showNewTagInput" @keyup.enter="addTask">
+        <!-- TAG -->
         <label class="tag-container" v-for="tag in tags" :key="tag">
           <input class="tag-input" v-model="selectedTag" type="radio" :value="tag" :aria-label="tag" />
           <span class="tag" aria-hidden="true">{{ tag }}</span>
         </label>
       </template>
 
+      <!-- NEW TAG BUTTON -->
       <button v-if="!showNewTagInput" class="tag" @click="addTag">+ Tag</button>
 
+      <!-- NEW TAG INPUT -->
       <input v-if="showNewTagInput" type="text" class="tag" placeholder="enter a tag" ref="newTagEle" v-model="newTag" v-autoresize-width="175" @keyup.enter="addTask" />
     </div>
   </form>

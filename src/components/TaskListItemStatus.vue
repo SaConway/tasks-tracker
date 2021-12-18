@@ -1,6 +1,9 @@
 <template>
   <div>
+    <!-- CHECK BOX -->
     <input type="checkbox" class="original-checkbox" v-model="task.done" @change="doneTask" />
+
+    <!-- ICONS -->
     <svg class="checkbox-custom">
       <use v-if="task.done" xlink:href="#checked-icon" />
       <use v-else xlink:href="#unchecked-icon" />

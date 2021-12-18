@@ -1,18 +1,27 @@
 <template>
   <div class="container">
+    <!-- STOP BUTTON -->
     <button v-if="data.status != 'off'" @click="stopTimer">Stop</button>
 
+    <!-- PAUSE BUTTON -->
     <button v-if="data.status == 'on'" @click="pauseTimer" key="pause-btn">Pause</button>
+
+    <!-- RESUME BUTTON -->
     <button v-else-if="data.status == 'pause'" @click="resumeTimer">Resume</button>
 
     <template v-if="data.status == 'off'">
+      <!-- TIMER INPUT -->
       <timer-input />
+
+      <!-- START BUTTON -->
       <button @click="startTimer" class="start-btn" key="start-btn">Start</button>
     </template>
 
     <template v-if="data.countdown != null">
+      <!-- COUNTDOWN -->
       <p class="countdown">{{ data.countdown }}</p>
 
+      <!-- PROGRESS -->
       <div class="progress">
         <div class="bar" :style="{ width: data.progress + '%' }"></div>
       </div>

@@ -1,41 +1,37 @@
 <template>
   <div class="wrapper">
-    <input
-      v-model="data.hours"
-      maxlength="2"
-      ref="hoursInput"
-      @input="onInputChange"
-      @keyup.enter="startTimer"
-    />
+    <!-- HOURS INPUT -->
+    <input v-model="data.hours" maxlength="2" ref="hoursInput" @input="onInputChange" @keyup.enter="startTimer" />
     <span class="time-period">h</span>
 
+    <!-- MINUTE INPUT -->
     <input v-model="data.minutes" maxlength="2" @input="onInputChange" @keyup.enter="startTimer" />
     <span class="time-period">m</span>
   </div>
 </template>
 
 <script>
-import { timerStore } from "../store/timerStore";
+import { timerStore } from '../store/timerStore'
 
 export default {
   data() {
     return {
       data: timerStore.state.output
-    };
+    }
   },
   mounted() {
-    this.$refs.hoursInput.focus();
+    this.$refs.hoursInput.focus()
   },
   methods: {
     onInputChange() {
-      this.data.hours = this.data.hours.replace(/[^\d]+/g, "");
-      this.data.minutes = this.data.minutes.replace(/[^\d]+/g, "");
+      this.data.hours = this.data.hours.replace(/[^\d]+/g, '')
+      this.data.minutes = this.data.minutes.replace(/[^\d]+/g, '')
     },
     startTimer() {
-      timerStore.startTimer();
+      timerStore.startTimer()
     }
   }
-};
+}
 </script>
 
 <style scoped>

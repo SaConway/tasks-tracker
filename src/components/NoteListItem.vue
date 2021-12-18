@@ -1,9 +1,11 @@
 <template>
   <div class="note">
+    <!-- DELETE NOTE -->
     <button class="note-delete" @click="deleteNote">
       <icon-delete />
     </button>
 
+    <!-- NOTE INPUT -->
     <textarea class="note-input" v-model="note.text" v-autoresize-height></textarea>
   </div>
 </template>

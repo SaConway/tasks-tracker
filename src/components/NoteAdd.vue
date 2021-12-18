@@ -1,39 +1,33 @@
 <template>
-  <textarea
-    placeholder="enter a new note.."
-    class="new-note"
-    ref="noteInput"
-    v-autoresize-height
-    @keyup.ctrl.enter="addNote"
-  ></textarea>
+  <textarea placeholder="enter a new note.." class="new-note" ref="noteInput" v-autoresize-height @keyup.ctrl.enter="addNote"></textarea>
 </template>
 
 <script>
-import { AutoResizeHeight } from "../directives/AutoResizeHeight";
-import { notesStore } from "../store/notesStore";
+import { AutoResizeHeight } from '../directives/AutoResizeHeight'
+import { notesStore } from '../store/notesStore'
 
 export default {
   directives: {
     AutoResizeHeight
   },
   mounted() {
-    this.$refs.noteInput.focus();
+    this.$refs.noteInput.focus()
   },
   methods: {
     addNote() {
-      if (this.$refs.noteInput.value != "") {
+      if (this.$refs.noteInput.value != '') {
         const newNote = {
           text: this.$refs.noteInput.value,
           date: new Date().getTime()
-        };
+        }
 
-        notesStore.addNote(newNote);
+        notesStore.addNote(newNote)
 
-        this.$refs.noteInput.value = "";
+        this.$refs.noteInput.value = ''
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

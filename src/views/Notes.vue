@@ -1,6 +1,9 @@
 <template>
   <div class="container">
+    <!-- ADD NOTE -->
     <note-add />
+
+    <!-- NOTE LIST -->
     <note-list />
   </div>
 </template>
