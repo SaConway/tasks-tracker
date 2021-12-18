@@ -1,11 +1,11 @@
 <template>
   <div class="task">
-    <TaskListItemStatus :task="task" />
+    <task-list-item-status :task="task" />
     <input type="text" v-model="task.text" v-autoresize-width="200" />
     <span v-if="tag" class="tag">{{ tag }}</span>
     <!-- <span class="time-duration">{{ task.date | taskTime }}</span> -->
     <button @click="deleteTask" class="delete-task">
-      <IconTrush></IconTrush>
+      <icon-trush></icon-trush>
     </button>
   </div>
 </template>

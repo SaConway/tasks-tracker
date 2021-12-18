@@ -1,7 +1,7 @@
 <template>
   <div class="note">
     <button class="note-delete" @click="deleteNote">
-      <IconDelete />
+      <icon-delete />
     </button>
 
     <textarea class="note-input" v-model="note.text" v-autoresize-height></textarea>
@@ -9,24 +9,24 @@
 </template>
 
 <script>
-import { notesStore } from "../store/notesStore";
-import { AutoResizeHeight } from "../directives/AutoResizeHeight";
-import IconDelete from "../components/IconDelete";
+import { notesStore } from '../store/notesStore'
+import { AutoResizeHeight } from '../directives/AutoResizeHeight'
+import IconDelete from '../components/IconDelete'
 
 export default {
   components: {
     IconDelete
   },
-  props: ["note"],
+  props: ['note'],
   directives: {
     AutoResizeHeight
   },
   methods: {
     deleteNote() {
-      notesStore.deleteNote(this.note);
+      notesStore.deleteNote(this.note)
     }
   }
-};
+}
 </script>
 
 <style scoped>
