@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="top-bar">
-      <TaskAdd :tags="tags" />
-      <TaskFilters @filter-selected="setFilter($event)" />
+      <task-add :tags="tags" />
+      <task-filters @filter-selected="setFilter($event)" />
     </div>
 
-    <TaskList :tasks="orderedTasks" />
-    <IconsCheckBox />
+    <task-list :tasks="orderedTasks" />
+    <icons-check-box />
   </div>
 </template>
 

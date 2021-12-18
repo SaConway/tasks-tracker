@@ -1,10 +1,12 @@
 <template>
   <main id="app">
-    <SideBar />
+    <side-bar />
+
     <keep-alive>
       <router-view />
     </keep-alive>
-    <ToggleTheme />
+
+    <toggle-theme />
   </main>
 </template>
 

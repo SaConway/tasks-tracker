@@ -1,21 +1,20 @@
 <template>
   <div class="container">
-    <NoteAdd />
-    <NoteList />
+    <note-add />
+    <note-list />
   </div>
 </template>
 
 <script>
-import NoteAdd from "../components/NoteAdd";
-import NoteList from "../components/NoteList";
+import NoteAdd from '../components/NoteAdd'
+import NoteList from '../components/NoteList'
 
 export default {
   components: {
     NoteAdd,
     NoteList
   }
-};
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

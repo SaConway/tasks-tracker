@@ -6,7 +6,7 @@
     <button v-else-if="data.status == 'pause'" @click="resumeTimer">Resume</button>
 
     <template v-if="data.status == 'off'">
-      <TimerInput />
+      <timer-input />
       <button @click="startTimer" class="start-btn" key="start-btn">Start</button>
     </template>
 
@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import { timerStore } from "../store/timerStore";
-import TimerInput from "../components/TimerInput";
+import { timerStore } from '../store/timerStore'
+import TimerInput from '../components/TimerInput'
 
 export default {
   components: {
@@ -31,23 +31,23 @@ export default {
   data: function() {
     return {
       data: timerStore.state.output
-    };
+    }
   },
   methods: {
     startTimer() {
-      timerStore.startTimer();
+      timerStore.startTimer()
     },
     stopTimer() {
-      timerStore.stopTimer();
+      timerStore.stopTimer()
     },
     pauseTimer() {
-      timerStore.pauseTimer();
+      timerStore.pauseTimer()
     },
     resumeTimer() {
-      timerStore.resumeTimer();
+      timerStore.resumeTimer()
     }
   }
-};
+}
 </script>
 
 <style scoped>
