@@ -19,7 +19,15 @@ export default {
   components: {
     IconDelete
   },
-  props: ['note'],
+  props: {
+    note: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+      required: false
+    }
+  },
   directives: {
     AutoResizeHeight
   },

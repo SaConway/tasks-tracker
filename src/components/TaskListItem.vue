@@ -23,7 +23,15 @@ import IconTrush from '@/components/IconTrush'
 import TaskListItemStatus from '@/components/TaskListItemStatus'
 
 export default {
-  props: ['task'],
+  props: {
+    task: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+      required: false
+    }
+  },
   components: {
     IconTrush,
     TaskListItemStatus

@@ -13,7 +13,15 @@
 
 <script>
 export default {
-  props: ['task'],
+  props: {
+    task: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+      required: false
+    }
+  },
   methods: {
     doneTask() {
       this.task.duration = this.task.done ? this.getDuration() : null
