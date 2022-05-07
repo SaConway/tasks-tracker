@@ -6,9 +6,6 @@
     <!-- INPUT -->
     <input type="text" v-model="task.text" v-autoresize-width="200" />
 
-    <!-- TAG -->
-    <span v-if="tag" class="tag">{{ tag }}</span>
-
     <!-- DELETE -->
     <button class="delete-task" @click="deleteTask">
       <icon-trash></icon-trash>
@@ -38,11 +35,6 @@ export default {
         return {}
       },
       required: false
-    }
-  },
-  computed: {
-    tag() {
-      return this.task.tags?.[0] || ''
     }
   },
   methods: {
@@ -110,14 +102,5 @@ input[type='text'] {
   padding-left: 0.8rem;
   font-size: 0.7rem;
   opacity: 0.8;
-}
-
-.tag {
-  background-color: var(--clr-accent);
-  color: var(--clr-primary);
-  border-radius: 100vmax;
-  font-size: 0.65rem;
-  margin-right: 0.6rem;
-  padding: 0.25rem 0.5rem;
 }
 </style>
