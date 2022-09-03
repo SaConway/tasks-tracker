@@ -60,6 +60,10 @@ html {
   background-color: var(--clr-primary);
 }
 
+ul {
+  list-style: none;
+}
+
 :focus {
   outline: none;
 }

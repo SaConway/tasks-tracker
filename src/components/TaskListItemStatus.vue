@@ -4,7 +4,7 @@
     <input class="original-checkbox" type="checkbox" :aria-label="inputAriaLabel" v-model="task.done" @change="doneTask" />
 
     <!-- ICONS -->
-    <svg class="checkbox-custom">
+    <svg class="checkbox-custom" aria-hidden="true">
       <use v-if="task.done" xlink:href="#checked-icon" />
       <use v-else xlink:href="#unchecked-icon" />
     </svg>

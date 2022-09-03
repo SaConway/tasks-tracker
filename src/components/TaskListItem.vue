@@ -4,7 +4,7 @@
     <task-list-item-status :task="task" />
 
     <!-- INPUT -->
-    <input type="text" v-model="task.text" v-autoresize-width="200" />
+    <input type="text" v-model="task.text" aria-label="Task text" v-autoresize-width="200" />
 
     <!-- DELETE -->
     <button class="delete-task" :aria-label="`Delete ${task.text}`" @click="deleteTask">

@@ -1,5 +1,5 @@
 <template>
-  <button @click="onToggleTheme"></button>
+  <button :aria-label="ariaLabel" @click="onToggleTheme"></button>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
   data() {
     return {
       theme: localStorage.getItem('theme') || ENUMS.THEMES.DARK
+    }
+  },
+  computed: {
+    ariaLabel() {
+      return `Set ${this.theme === ENUMS.THEMES.LIGHT ? ENUMS.THEMES.DARK : ENUMS.THEMES.LIGHT} theme`
     }
   },
   methods: {

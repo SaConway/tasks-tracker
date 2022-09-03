@@ -1,7 +1,7 @@
 <template>
   <header class="sidebar">
-    <nav class="nav">
-      <ul class="list">
+    <nav class="nav" aria-label="Main">
+      <ul class="list" aria-label="Features">
         <li>
           <!-- TASKS -->
           <router-link class="link" to="/tasks-tracker">

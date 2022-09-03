@@ -1,7 +1,7 @@
 <template>
   <form class="form">
     <!-- NEW TASK INPUT -->
-    <input class="new-task" type="text" placeholder="enter a new task.." ref="taskInput" v-autoresize-width="500" @keyup.enter="addTask" />
+    <input class="new-task" type="text" placeholder="enter a new task.." aria-label="Create a new task" ref="taskInput" v-autoresize-width="500" @keyup.enter="addTask" />
   </form>
 </template>
 
