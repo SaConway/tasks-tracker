@@ -3,6 +3,11 @@ export default {
     DARK: 'dark',
     LIGHT: 'light'
   },
+  FEATURES: {
+    TASKS: 'tasks',
+    TIMER: 'timer',
+    NOTES: 'notes'
+  },
   TASKS: {
     FILTERS: {
       ALL: 'all',

@@ -4,6 +4,8 @@
     <side-bar />
 
     <main>
+      <h1 class="sr-only">{{ titleMap[$route.name] }}</h1>
+
       <!-- ROUTER -->
       <keep-alive>
         <router-view />
@@ -19,11 +21,21 @@
 // IMPORTS
 import SideBar from '@/components/SideBar'
 import ToggleTheme from '@/components/ToggleTheme'
+import ENUMS from '@/utils/enums'
 
 export default {
   components: {
     SideBar,
     ToggleTheme
+  },
+  data() {
+    return {
+      titleMap: {
+        [ENUMS.FEATURES.TASKS]: 'Tasks Tracker',
+        [ENUMS.FEATURES.TIMER]: 'Timer',
+        [ENUMS.FEATURES.NOTES]: 'Notes'
+      }
+    }
   }
 }
 </script>
@@ -65,6 +77,16 @@ html {
 .main-wrapper {
   display: grid;
   grid-template-columns: auto 1fr;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 button {
