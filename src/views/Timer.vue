@@ -69,7 +69,7 @@ export default {
 button {
   color: var(--clr-accent);
   width: 7rem;
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
   padding: 1rem;
   font-size: var(--font-size-normal);
   border: 1px solid var(--clr-accent);
@@ -106,9 +106,11 @@ p.countdown {
   p.countdown {
     font-size: 3rem;
   }
+
   .progress {
     width: 80%;
   }
+
   .start-btn {
     display: block;
     margin-top: 2rem;

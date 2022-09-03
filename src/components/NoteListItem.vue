@@ -62,8 +62,8 @@ export default {
 
 .note-delete {
   position: absolute;
-  top: 5px;
-  left: 2px;
+  inset-block-start: 5px;
+  inset-inline-start: 2px;
   width: 25px;
   height: 25px;
   padding: 0;

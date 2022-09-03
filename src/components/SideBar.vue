@@ -51,7 +51,7 @@
 <style scoped>
 .sidebar {
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.2);
-  padding-top: 1.3rem;
+  padding-block-start: 1.3rem;
   background-color: var(--clr-primary);
 }
 
@@ -119,7 +119,7 @@
 span {
   color: var(--clr-accent);
   font-size: 0.7rem;
-  margin-top: 0.7rem;
+  margin-block-start: 0.7rem;
   transition: 0.5s color ease-in-out;
 }
 

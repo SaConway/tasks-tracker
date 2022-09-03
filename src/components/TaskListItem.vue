@@ -65,15 +65,14 @@ export default {
 
 <style scoped>
 .task {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
   position: relative;
   display: flex;
   align-items: center;
 }
 
 input[type='text'] {
-  margin-left: 2rem;
-  margin-right: 1rem;
+  margin-inline: 2rem 1rem;
   padding: 0.5rem;
   background-color: transparent;
   border: none;
@@ -96,11 +95,5 @@ input[type='text'] {
 
 .delete-task:hover svg {
   transform: scale(1.25, 1.25);
-}
-
-.time-duration {
-  padding-left: 0.8rem;
-  font-size: 0.7rem;
-  opacity: 0.8;
 }
 </style>

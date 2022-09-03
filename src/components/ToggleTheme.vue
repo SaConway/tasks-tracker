@@ -45,8 +45,8 @@ export default {
 <style scoped>
 button {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
   border: none;
   cursor: pointer;
   z-index: 2;
@@ -60,7 +60,7 @@ button {
 button::before {
   content: '';
   position: absolute;
-  top: 50%;
+  inset-block-start: 50%;
   transform: translateY(-50%);
   width: 1rem;
   height: 1rem;

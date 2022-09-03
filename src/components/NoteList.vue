@@ -31,8 +31,8 @@ export default {
 
 <style scoped>
 .notes {
-  padding-bottom: 2.5rem;
-  margin-top: 3rem;
+  padding-block-end: 2.5rem;
+  margin-block-start: 3rem;
   columns: 5;
   gap: 0;
 }

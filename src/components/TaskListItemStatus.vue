@@ -53,8 +53,8 @@ export default {
 .original-checkbox {
   opacity: 0;
   position: absolute;
-  top: 8px;
-  left: 2px;
+  inset-block-start: 8px;
+  inset-inline-start: 2px;
   cursor: pointer;
   width: 24px;
   height: 24px;
@@ -72,7 +72,7 @@ export default {
 
 .checkbox-custom {
   position: absolute;
-  top: 5px;
+  inset-block-start: 5px;
   z-index: -1;
   height: 24px;
   width: 24px;

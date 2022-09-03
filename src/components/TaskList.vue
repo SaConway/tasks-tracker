@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .tasks {
-  margin-top: 3rem;
+  margin-block-start: 3rem;
   color: var(--clr-accent);
 }
 

@@ -55,11 +55,10 @@ input {
   color: var(--clr-accent);
   font-size: var(--font-size-normal);
   vertical-align: middle;
-  margin-right: 2rem;
-  margin-left: 1rem;
+  margin-inline: 1rem 2rem;
 }
 
 .time-period:last-of-type {
-  margin-right: 4rem;
+  margin-inline-end: 4rem;
 }
 </style>
