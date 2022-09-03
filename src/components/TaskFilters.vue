@@ -8,8 +8,17 @@
 export default {
   data() {
     return {
-      filters: [],
-      selectedFilter: 'all'
+      filters: [
+        { type: 'all', title: 'All' },
+        { type: 'unfinished-only', title: 'Unfinished Only' }
+      ]
+    }
+  },
+  props: {
+    selectedFilter: {
+      type: String,
+      required: false,
+      default: 'all'
     }
   },
   methods: {
@@ -17,12 +26,6 @@ export default {
       this.selectedFilter = filter
       this.$emit('filter-selected', filter)
     }
-  },
-  created() {
-    this.filters = [
-      { type: 'all', title: 'All' },
-      { type: 'unfinished-only', title: 'Unfinished Only' }
-    ]
   }
 }
 </script>

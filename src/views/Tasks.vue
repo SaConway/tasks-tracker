@@ -5,7 +5,7 @@
       <task-add />
 
       <!-- FILTER TASKS -->
-      <task-filters @filter-selected="setFilter($event)" />
+      <task-filters :selectedFilter="filter" @filter-selected="setFilter($event)" />
     </div>
 
     <!-- TASK LIST -->
@@ -35,12 +35,24 @@ export default {
     return {
       tasks: tasksStore.state.tasks,
       orderedTasks: [],
-      filter: 'all'
+      filter: ''
+    }
+  },
+  watch: {
+    tasks: {
+      handler: function(val) {
+        localStorage.setItem('tasks', JSON.stringify(val))
+
+        this.setOrderedTasks()
+      },
+      deep: true
     }
   },
   methods: {
     setFilter(filter) {
       this.filter = filter
+
+      localStorage.setItem('filter', filter)
 
       this.setOrderedTasks()
     },
@@ -69,19 +81,13 @@ export default {
     toFullDate(dateString) {
       const date = new Date(dateString)
       return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-    }
-  },
-  watch: {
-    tasks: {
-      handler: function(val) {
-        localStorage.setItem('tasks', JSON.stringify(val))
-
-        this.setOrderedTasks()
-      },
-      deep: true
+    },
+    getSelectedFilter() {
+      return localStorage.getItem('filter') || 'all'
     }
   },
   created() {
+    this.filter = this.getSelectedFilter()
     this.setOrderedTasks()
   }
 }
