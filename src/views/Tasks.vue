@@ -5,7 +5,7 @@
       <task-add />
 
       <!-- FILTER TASKS -->
-      <task-filters :selectedFilter="filter" @filter-selected="setFilter($event)" />
+      <task-filters :selectedFilter="filter" @[EVENTS.SELECTED]="setFilter($event)" />
     </div>
 
     <!-- TASK LIST -->
@@ -24,6 +24,7 @@ import TaskFilters from '@/components/TaskFilters'
 import TaskList from '@/components/TaskList'
 import IconsCheckBox from '@/components/IconsCheckBox'
 import ENUMS from '@/utils/enums'
+import EVENTS from '@/utils/events'
 
 export default {
   components: {
@@ -34,6 +35,7 @@ export default {
   },
   data() {
     return {
+      EVENTS,
       tasks: tasksStore.state.tasks,
       orderedTasks: [],
       filter: ''

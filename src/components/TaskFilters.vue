@@ -7,6 +7,7 @@
 <script>
 // IMPORTS
 import ENUMS from '@/utils/enums'
+import EVENTS from '@/utils/events'
 
 export default {
   data() {
@@ -26,7 +27,7 @@ export default {
   },
   methods: {
     setFilter(filter) {
-      this.$emit('filter-selected', filter)
+      this.$emit(EVENTS.SELECTED, filter)
     }
   }
 }
