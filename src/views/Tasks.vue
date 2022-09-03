@@ -101,6 +101,13 @@ export default {
 .top-bar {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .top-bar {
+    flex-direction: column;
+  }
 }
 </style>

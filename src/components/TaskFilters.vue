@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     setFilter(filter) {
-      this.selectedFilter = filter
       this.$emit('filter-selected', filter)
     }
   }
@@ -34,15 +33,15 @@ export default {
 .filters {
   display: flex;
   align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .filter-btn {
   color: var(--clr-accent);
-  padding: 0.4rem 1rem;
-  margin: 0 0.3rem;
+  padding: 0.3rem 0.9rem;
   border: 1px solid currentColor;
   border-radius: var(--border-radius);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 .filter-btn:active {
