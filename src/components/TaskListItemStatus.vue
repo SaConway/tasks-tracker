@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- CHECK BOX -->
-    <input class="original-checkbox" type="checkbox" v-model="task.done" @change="doneTask" />
+    <input class="original-checkbox" type="checkbox" :aria-label="inputAriaLabel" v-model="task.done" @change="doneTask" />
 
     <!-- ICONS -->
     <svg class="checkbox-custom">
@@ -20,6 +20,11 @@ export default {
         return {}
       },
       required: false
+    }
+  },
+  computed: {
+    inputAriaLabel() {
+      return `${this.task.done ? 'Check' : 'Uncheck'} ${this.task.text}`
     }
   },
   methods: {

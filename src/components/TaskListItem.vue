@@ -7,7 +7,7 @@
     <input type="text" v-model="task.text" v-autoresize-width="200" />
 
     <!-- DELETE -->
-    <button class="delete-task" @click="deleteTask">
+    <button class="delete-task" :aria-label="`Delete ${task.text}`" @click="deleteTask">
       <icon-trash></icon-trash>
     </button>
   </div>

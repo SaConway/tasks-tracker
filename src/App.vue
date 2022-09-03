@@ -1,16 +1,18 @@
 <template>
-  <main id="app">
+  <div class="main-wrapper" id="app">
     <!-- SIDE BAR -->
     <side-bar />
 
-    <!-- ROUTER -->
-    <keep-alive>
-      <router-view />
-    </keep-alive>
+    <main>
+      <!-- ROUTER -->
+      <keep-alive>
+        <router-view />
+      </keep-alive>
 
-    <!-- TOGGLE THEME -->
-    <toggle-theme />
-  </main>
+      <!-- TOGGLE THEME -->
+      <toggle-theme />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -60,9 +62,9 @@ html {
   color: var(--clr-accent);
 }
 
-main {
-  display: flex;
-  justify-content: space-between;
+.main-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 button {
@@ -88,7 +90,7 @@ button {
   width: 95%;
   height: 100vh;
   margin: 0 auto;
-  padding: 3rem 3rem 3rem 9.5rem;
+  padding: 3rem;
   opacity: 0;
   animation: 1.5s fade-in ease-in-out forwards;
 }
