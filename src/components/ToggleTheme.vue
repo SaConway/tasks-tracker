@@ -3,15 +3,18 @@
 </template>
 
 <script>
+// IMPORTS
+import ENUMS from '@/utils/enums'
+
 export default {
   data() {
     return {
-      theme: localStorage.getItem('theme') || 'dark'
+      theme: localStorage.getItem('theme') || ENUMS.THEMES.DARK
     }
   },
   methods: {
     onToggleTheme() {
-      const theme = this.theme === 'light' ? 'dark' : 'light'
+      const theme = this.theme === ENUMS.THEMES.LIGHT ? ENUMS.THEMES.DARK : ENUMS.THEMES.LIGHT
       this.setTheme(theme)
     },
     setTheme(theme) {
@@ -20,13 +23,13 @@ export default {
 
       document.body.className = `${theme}-theme`
 
-      document.documentElement.style.setProperty('--clr-primary', theme === 'light' ? '#eee' : '#222831')
-      document.documentElement.style.setProperty('--clr-accent', theme === 'light' ? '#222831' : '#eee')
+      document.documentElement.style.setProperty('--clr-primary', theme === ENUMS.THEMES.LIGHT ? '#eee' : '#222831')
+      document.documentElement.style.setProperty('--clr-accent', theme === ENUMS.THEMES.LIGHT ? '#222831' : '#eee')
     }
   },
   mounted() {
-    if (this.theme === 'light') {
-      this.setTheme('light')
+    if (this.theme === ENUMS.THEMES.LIGHT) {
+      this.setTheme(ENUMS.THEMES.LIGHT)
     } else {
       document.body.className = 'dark-theme'
     }

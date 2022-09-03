@@ -23,6 +23,7 @@ import TaskAdd from '@/components/TaskAdd'
 import TaskFilters from '@/components/TaskFilters'
 import TaskList from '@/components/TaskList'
 import IconsCheckBox from '@/components/IconsCheckBox'
+import ENUMS from '@/utils/enums'
 
 export default {
   components: {
@@ -71,9 +72,9 @@ export default {
       return this.tasks.filter(task => {
         let res = this.toFullDate(task.date) === date
 
-        if (this.filter === 'all') {
+        if (this.filter === ENUMS.TASKS.FILTERS.ALL) {
           return res
-        } else if (this.filter === 'unfinished-only') {
+        } else if (this.filter === ENUMS.TASKS.FILTERS.UNFINISHED_ONLY) {
           return res && !task.done
         }
       })
@@ -83,7 +84,7 @@ export default {
       return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     },
     getSelectedFilter() {
-      return localStorage.getItem('filter') || 'all'
+      return localStorage.getItem('filter') || ENUMS.TASKS.FILTERS.ALL
     }
   },
   created() {

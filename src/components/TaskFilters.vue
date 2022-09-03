@@ -5,12 +5,15 @@
 </template>
 
 <script>
+// IMPORTS
+import ENUMS from '@/utils/enums'
+
 export default {
   data() {
     return {
       filters: [
-        { type: 'all', title: 'All' },
-        { type: 'unfinished-only', title: 'Unfinished Only' }
+        { type: ENUMS.TASKS.FILTERS.ALL, title: 'All' },
+        { type: ENUMS.TASKS.FILTERS.UNFINISHED_ONLY, title: 'Unfinished Only' }
       ]
     }
   },
@@ -18,7 +21,7 @@ export default {
     selectedFilter: {
       type: String,
       required: false,
-      default: 'all'
+      default: ENUMS.TASKS.FILTERS.ALL
     }
   },
   methods: {
