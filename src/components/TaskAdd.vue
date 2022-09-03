@@ -29,12 +29,25 @@ export default {
         this.$refs.taskInput.value = ''
         this.$refs.taskInput.style.width = '500px'
 
-        this.$refs.taskInput.focus()
+        this.focusInput()
       }
+    },
+    focusInput() {
+      this.$refs.taskInput?.focus()
     }
   },
   mounted() {
-    this.$refs.taskInput.focus()
+    this.focusInput()
+
+    document.addEventListener('keyup', e => {
+      if (document.activeElement.nodeName === 'INPUT' && document.activeElement.getAttribute('type') === 'text') {
+        return
+      }
+
+      if (e.code === 'Slash') {
+        this.focusInput()
+      }
+    })
   }
 }
 </script>
