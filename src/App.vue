@@ -43,7 +43,7 @@ export default {
 <style>
 :root {
   --clr-primary: #222831;
-  --clr-secondary: #d65a31;
+  --clr-secondary: #ee6436;
   --clr-accent: #eee;
   --border-radius: 0.2rem;
   --font-size-normal: 1rem;

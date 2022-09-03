@@ -43,7 +43,7 @@ export default {
 .filter-btn {
   color: var(--clr-accent);
   padding: 0.3rem 0.9rem;
-  border: 1px solid currentColor;
+  border: 1px solid var(--clr-accent);
   border-radius: var(--border-radius);
   font-size: 0.6rem;
 }
@@ -53,6 +53,7 @@ export default {
 }
 
 .filter-btn.selected {
+  color: var(--clr-primary);
   background-color: var(--clr-secondary);
 }
 </style>
