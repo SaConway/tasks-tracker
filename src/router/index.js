@@ -19,11 +19,6 @@ const routes = [
     name: ENUMS.FEATURES.TIMER,
     path: '/timer',
     component: () => import('../views/Timer.vue')
-  },
-  {
-    name: ENUMS.FEATURES.NOTES,
-    path: '/notes',
-    component: () => import('../views/Notes.vue')
   }
 ]
 

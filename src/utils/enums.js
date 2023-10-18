@@ -5,8 +5,7 @@ export default {
   },
   FEATURES: {
     TASKS: 'tasks',
-    TIMER: 'timer',
-    NOTES: 'notes'
+    TIMER: 'timer'
   },
   TASKS: {
     FILTERS: {
