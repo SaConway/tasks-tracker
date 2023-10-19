@@ -1,4 +1,3 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === "production" ? "/minimal-productivity-apps/" : "/"
-};
+  publicPath: process.env.NODE_ENV === 'production' ? '/tasks-tracker/' : '/'
+}

@@ -3,9 +3,6 @@ export default {
     DARK: 'dark',
     LIGHT: 'light'
   },
-  FEATURES: {
-    TASKS: 'tasks'
-  },
   TASKS: {
     FILTERS: {
       ALL: 'all',

@@ -1,11 +1,10 @@
 <template>
   <main class="main-wrapper" id="app">
-    <h1 class="sr-only">{{ titleMap[$route.name] }}</h1>
+    <!-- MAIN HEADER -->
+    <h1 class="sr-only">Tasks Tracker</h1>
 
-    <!-- ROUTER -->
-    <keep-alive>
-      <router-view />
-    </keep-alive>
+    <!-- TASKS -->
+    <tasks />
 
     <!-- TOGGLE THEME -->
     <toggle-theme />
@@ -14,19 +13,13 @@
 
 <script>
 // IMPORTS
+import Tasks from '@/views/Tasks.vue'
 import ToggleTheme from '@/components/ToggleTheme'
-import ENUMS from '@/utils/enums'
 
 export default {
   components: {
+    Tasks,
     ToggleTheme
-  },
-  data() {
-    return {
-      titleMap: {
-        [ENUMS.FEATURES.TASKS]: 'Tasks Tracker'
-      }
-    }
   }
 }
 </script>
