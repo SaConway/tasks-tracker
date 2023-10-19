@@ -1,7 +1,6 @@
-# Minimal Productivity Apps
+# Tasks Tracker
 
-
-I needed a tool for managing tasks and writing down notes, but most of the tools out there are either complicated or lacking a nice and solid UI. So I decided to make one that suits my needs. It's minimal and includs Tasks Tracker, Timer and Notes manager.
+I needed a way to manage my daily tasks, but most tools I found were either too complicated or didn't look good. So, I decided to create one that fits my needs.
 
 Have a look [here](https://saconway.github.io/minimal-productivity-apps/).
 
