@@ -14,11 +14,6 @@ const routes = [
     name: ENUMS.FEATURES.TASKS,
     path: '/tasks-tracker',
     component: Tasks
-  },
-  {
-    name: ENUMS.FEATURES.TIMER,
-    path: '/timer',
-    component: () => import('../views/Timer.vue')
   }
 ]
 

@@ -31,8 +31,7 @@ export default {
   data() {
     return {
       titleMap: {
-        [ENUMS.FEATURES.TASKS]: 'Tasks Tracker',
-        [ENUMS.FEATURES.TIMER]: 'Timer'
+        [ENUMS.FEATURES.TASKS]: 'Tasks Tracker'
       }
     }
   }

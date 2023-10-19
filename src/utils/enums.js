@@ -4,8 +4,7 @@ export default {
     LIGHT: 'light'
   },
   FEATURES: {
-    TASKS: 'tasks',
-    TIMER: 'timer'
+    TASKS: 'tasks'
   },
   TASKS: {
     FILTERS: {
