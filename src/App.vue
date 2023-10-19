@@ -1,31 +1,24 @@
 <template>
-  <div class="main-wrapper" id="app">
-    <!-- SIDE BAR -->
-    <side-bar />
+  <main class="main-wrapper" id="app">
+    <h1 class="sr-only">{{ titleMap[$route.name] }}</h1>
 
-    <main>
-      <h1 class="sr-only">{{ titleMap[$route.name] }}</h1>
+    <!-- ROUTER -->
+    <keep-alive>
+      <router-view />
+    </keep-alive>
 
-      <!-- ROUTER -->
-      <keep-alive>
-        <router-view />
-      </keep-alive>
-
-      <!-- TOGGLE THEME -->
-      <toggle-theme />
-    </main>
-  </div>
+    <!-- TOGGLE THEME -->
+    <toggle-theme />
+  </main>
 </template>
 
 <script>
 // IMPORTS
-import SideBar from '@/components/SideBar'
 import ToggleTheme from '@/components/ToggleTheme'
 import ENUMS from '@/utils/enums'
 
 export default {
   components: {
-    SideBar,
     ToggleTheme
   },
   data() {
@@ -74,11 +67,6 @@ ul {
 ::selection {
   background: var(--clr-secondary);
   color: var(--clr-accent);
-}
-
-.main-wrapper {
-  display: grid;
-  grid-template-columns: auto 1fr;
 }
 
 .sr-only {
