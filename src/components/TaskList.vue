@@ -3,6 +3,9 @@
     <!-- TASK LIST -->
     <div v-for="items in tasks" :key="items.date">
       <template v-if="items.tasks.length">
+        <!-- DATE -->
+        <p class="date">{{ items.date }}</p>
+
         <!-- TASK ITEM -->
         <task-list-item v-for="task in items.tasks" :key="items.date + task.date" :task="task" />
       </template>
@@ -32,11 +35,13 @@ export default {
 
 <style scoped>
 .tasks {
-  margin-block-start: 3rem;
+  display: grid;
+  gap: 2rem;
+  margin-top: 4rem;
   color: var(--clr-accent);
 }
 
 .date {
-  margin: 2rem auto 1rem;
+  font-size: 0.875rem;
 }
 </style>

@@ -83,7 +83,9 @@ export default {
     },
     toFullDate(dateString) {
       const date = new Date(dateString)
-      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+      const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}, ${weekday[date.getDay()]}`
     },
     getSelectedFilter() {
       return localStorage.getItem('filter') || ENUMS.TASKS.FILTERS.ALL
